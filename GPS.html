@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body style="width: 100%; height:100%;";>
+
+
+<div style="width: 50%; height:100%; background-color:olive;">
+<p id="stuff">Click the button to search for messages:</p>
+<button onclick="getLocation()">Locate</button>
+</div>
+
+
+<script>
+var x=document.getElementById("stuff");
+var latitude;
+var longitude;
+
+
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.watchPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+  
+function showPosition(position)
+  {latitude =  position.coords.latitude;
+  longitude =  position.coords.longitude;
+  	  
+  x.innerHTML="Latitude: " + latitude + "<br>Longitude: " + longitude;	
+
+  
+  $.ajax({
+  dataType: "json",
+  url: "/check",
+  data: {latitude:latitude,longitude:longitude},
+  success: function() {}
+});
+  
+  }
+</script>
+</body>
+</html>
+
+
