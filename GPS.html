@@ -10,9 +10,9 @@
 
 
 <script>
-var x=document.getElementById("stuff");
-var latitude;
-var longitude;
+<!-- var x=document.getElementById("stuff"); -->
+var latitude = -1;
+var longitude = -1;
 
 
 function getLocation()
@@ -28,7 +28,7 @@ function showPosition(position)
   {latitude =  position.coords.latitude;
   longitude =  position.coords.longitude;
   	  
-  x.innerHTML="Latitude: " + latitude + "<br>Longitude: " + longitude;	
+<!--  x.innerHTML="Latitude: " + latitude + "<br>Longitude: " + longitude;	-->
 
   
   $.ajax({
