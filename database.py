@@ -1,4 +1,5 @@
 from pymongo import Connection
+import math
 Connection = Connection('mongo.stuycs.org')
 db=Connection.admin
 res=db.authenticate('ml7','ml7')
@@ -21,5 +22,12 @@ def writeMessage(text,longitude,latitude):
     Messages.insert({'text':text,'longitude':longitude,'latitude':latitude})
 
 def returnMessagesinRange(longitude,latitude):
-    #Ok, so a degree of longitude and latitude is about 111 km, if we want to make it within 100m, we need to use pythag theorem, and convert the distances of the longitude and latitude into it. So yah... :P. Shouldn't be too difficult.
-    pass
+    allMessages = Accounts.find()
+    messagesinRange = []
+    for current in allMessages:
+        if ((current['longitude']-longitude) * (current['longitude']-longitude)) + ((current['latitude']-latitude)*(current['latitude']-latitude)) <= 10000:
+            if messagesinRange == None:
+                messagesinRange = [current]
+            else:
+                messagesinRange.append(current)
+    return messagesinRange
