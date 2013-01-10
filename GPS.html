@@ -4,13 +4,16 @@
 
 
 <div style="width: 50%; height:100%; background-color:olive;">
-<p id="stuff">Click the button to search for messages:</p>
+Latitude:<p id="Lat"></p><br>
+Longitude:<p id="Lon"></p><br>
+
 <button onclick="getLocation()">Locate</button>
 </div>
 
 
 <script>
-<!-- var x=document.getElementById("stuff"); -->
+var Lat=document.getElementById("Lat"); 
+var Lon=document.getElementById("Lon"); 
 var latitude = -1;
 var longitude = -1;
 
@@ -28,8 +31,8 @@ function showPosition(position)
   {latitude =  position.coords.latitude;
   longitude =  position.coords.longitude;
   	  
-<!--  x.innerHTML="Latitude: " + latitude + "<br>Longitude: " + longitude;	-->
-
+  Lat.innerHTML=latitude;
+  Lon.innerHTML= longitude;  
   
   $.ajax({
   dataType: "json",
