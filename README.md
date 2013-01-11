@@ -3,7 +3,7 @@ YAN-SHAN-PHAN-WU
 
 Nothing is currently operational. It uses HTML5 Geolocation API to get lat/lon and that works fine. 
 
-HTML works like this:
+HTML works like this: (http://i376.photobucket.com/albums/oo202/Bu115hit/gps_zps3899be32.png)
 
 There's a global varible named "mode" in app.py. <br>
 If mode is empty, Jinja only shows main selection page. <br>
