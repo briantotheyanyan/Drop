@@ -6,9 +6,13 @@ Nothing is currently operational. It uses HTML5 Geolocation API to get lat/lon a
 HTML works like this:
 
 There's a global varible named "mode" in app.py. 
+
 If mode is empty, Jinja only shows main selection page.
+
 If mode is NEW, then it shows the "create message" page.
+
 If mode is SCAN, then it shows messages within the area. 
+
 Everything is efficiently in one HTML document.
 
 
