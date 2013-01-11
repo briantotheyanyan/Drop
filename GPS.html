@@ -1,19 +1,69 @@
 <!DOCTYPE html>
 <html>
-<body style="width: 100%; height:100%;";>
+<body style="width: 100%; height:100%;background-color:olive;";>
+
+<!-- very simple. There's a global varible named "mode" in app.py. 
+If mode is empty, Jinja only shows main selection page.
+If mode is NEW, then it shows the "create message" page.
+If mode is SCAN, then it shows messages within the area. 
+Everything is efficiently in one HTML document.
+I did something similar for pd7-miniproject1 -->
+
+<form method="POST">
+ <input type="hidden" id="Latitude" name="Latitude">
+ <input type="hidden" id="Longitude" name="Longitude">
+
+<!--		Scan For Messages			-->
+{% if mode == "SCAN" %}
+
+	<input type="submit" name="button" value="BACK" >
+
+	{% if messages %}
+		<ol>
+		{% for x in messages %}
+		<li>{{x}}</li>
+		{% endfor %}
+		</ol>
+	{% else %}
+		<h1>NO MESSAGES WITHIN AREA</h1> 
+{% endif %}
+<!--		Create Message			-->	
+{% if mode == "NEW" %}
+	<textarea rows="4" cols="80" name="line"> </textarea> <br>
+	<input type="submit" name="button" value="Create Message" onClick="getLocation()" /> <br>
+	<input type="submit" name="button" value="Cancel" />
+
+<!--		Main Selection			-->	
+{% else %}
+
+	<div id="main">
+	Latitude:<p id="Lat"></p><br>
+	Longitude:<p id="Lon"></p><br>
+
+	<input type="submit" name="button" value="SCAN" onClick="getLocation()">
+	<input type="submit" name="button" value="NEW">
+
+	</div>
+
+{% endif %}
+
+</form>
 
 
-<div style="width: 50%; height:100%; background-color:olive;">
-Latitude:<p id="Lat"></p><br>
-Longitude:<p id="Lon"></p><br>
 
-<button onclick="getLocation()">Locate</button>
-</div>
+
+
+
 
 
 <script>
+//html
 var Lat=document.getElementById("Lat"); 
 var Lon=document.getElementById("Lon"); 
+//hidden inputs
+var Latitude=document.getElementById("Latitude"); 
+var Longitude=document.getElementById("Longitude"); 
+//javascript
 var latitude = -1;
 var longitude = -1;
 
@@ -34,16 +84,16 @@ function showPosition(position)
   Lat.innerHTML=latitude;
   Lon.innerHTML= longitude;  
   
-  $.ajax({
-  dataType: "json",
-  url: "/check",
-  data: {latitude:latitude,longitude:longitude},
-  success: function() {}
-});
+  Latitude=latitude;
+  Longitude=longitude;
   
   }
+  
+
+  	  
+
+
 </script>
+<!--TBI,document ready would prescan location and display-->
 </body>
 </html>
-
-
