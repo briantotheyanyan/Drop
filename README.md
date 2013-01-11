@@ -16,6 +16,7 @@ I rewrote HTML/javascript, should be good.
 app.py is not yet rewritten. That is Saturday or if I'm done with Macro book report early.
 
 I did something similar for pd7-miniproject1.
+
 https://github.com/stuycs-ml7/pd7-miniproject1/blob/master/Smirnov_Wu/app.py
 https://github.com/stuycs-ml7/pd7-miniproject1/blob/master/Smirnov_Wu/templates/Storynator.html
 
