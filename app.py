@@ -14,7 +14,7 @@ def main():
     			Latitude = request.form['Latitude']
 			Longitude = request.form['Longitude']
     			messages = database.returnMessagesinRange(Latitude,Longitude)
-    			return render_template('GPS.html', messages = messages, mode = mode)
+    			return render_template('GPS.html',messages=messages, mode = mode)
     		
 		elif mode == "NEW":
 			return render_template('GPS.html',mode = mode)
