@@ -10,13 +10,13 @@ mode = ""
 def main():
 	global mode
     	if request.method == 'GET':
-    		if mode = "SCAN":
+    		if mode == "SCAN":
     			Latitude = request.form['Latitude']
 			Longitude = request.form['Longitude']
     			messages = database.returnMessagesinRange(Latitude,Longitude)
     			return render_template('GPS.html', messages = messages, mode = mode)
     		
-		elif mode = "NEW":
+		elif mode == "NEW":
 			return render_template('GPS.html',mode = mode)
 		else:
     			return render_template('GPS.html',mode = mode)
@@ -31,7 +31,7 @@ def main():
 			Latitude = request.form['Latitude']
 			Longitude = request.form['Longitude']
 			if newM:
-				writeMessage(newM,Longitude,Latitude):
+				writeMessage(newM,Longitude,Latitude)
 				mode = ""
 			return redirect('/')
 		elif button == 'Cancel':
