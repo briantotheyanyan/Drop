@@ -4,6 +4,7 @@
 <body style="width: 100%; height:100%;background-color:olive;";>
 
 <script type=text/javascript src="{{  url_for('static', filename='jquery.js') }}"></script>
+<script type=text/javascript src="{{  url_for('static', filename='scripts.js') }}"></script>
 
 <form method="POST">
 
@@ -24,36 +25,7 @@ Latitude:{{Latitude}}<br>
 
 
 
-<script>
 
-
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
-function showPosition(position)
-  {
-document.getElementById("Latitude").value  =  position.coords.latitude;
-document.getElementById("Longitude").value =  position.coords.longitude;	
-
- }
-
-
-
-    $(document).ready(function() {
-
-       getLocation();
-    });
-
-
-
-
-</script>
-<!--TBI,document ready would prescan location and display-->
 </body>
 </html>
 
