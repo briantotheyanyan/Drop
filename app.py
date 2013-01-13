@@ -26,6 +26,7 @@ def main():
 			if  request.form['Latitude'] != None:
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
+			messages = database.returnMessagesinRange(Longitude,Latitude)
 			return redirect('/scan')
 
 		elif button == 'NEW':

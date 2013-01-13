@@ -1,5 +1,6 @@
 from pymongo import Connection
 import math
+import unicodedata
 Connection = Connection('mongo.stuycs.org')
 db=Connection.admin
 res=db.authenticate('ml7','ml7')
@@ -20,15 +21,15 @@ def verifyAccount(username,password):
 
 def writeMessage(text,longitude,latitude):
     Messages.insert({'text':text,'longitude':longitude,'latitude':latitude})
-
+ 
 
 def returnMessagesinRange(longitude,latitude):
-    allMessages = Accounts.find()
+    allMessages = Messages.find()
     messagesinRange = []
     for current in allMessages:
-        if ((current['longitude']-longitude) * (current['longitude']-longitude)) + ((current['latitude']-latitude)*(current['latitude']-latitude)) <= 10000:
+        if ((current['longitude']-longitude) * (current['longitude']-longitude)) + ((current['latitude']-latitude)*(current['latitude']-latitude)) <= 1:
             if messagesinRange == None:
-                messagesinRange = [current]
+                messagesinRange = [current['text']]
             else:
-                messagesinRange.append(current)
+                messagesinRange.append(current['text'])
     return messagesinRange
