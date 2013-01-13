@@ -21,6 +21,7 @@ def verifyAccount(username,password):
 def writeMessage(text,longitude,latitude):
     Messages.insert({'text':text,'longitude':longitude,'latitude':latitude})
 
+
 def returnMessagesinRange(longitude,latitude):
     allMessages = Accounts.find()
     messagesinRange = []

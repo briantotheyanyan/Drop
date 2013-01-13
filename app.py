@@ -77,7 +77,7 @@ def new():
 			Latitude = request.form['Latitude']
 			Longitude = request.form['Longitude']
 			if newM:
-				writeMessage(newM,Longitude,Latitude)
+				database.writeMessage(newM,Longitude,Latitude)
 				return redirect('/')
 			return redirect('/new')
 
