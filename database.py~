@@ -27,7 +27,7 @@ def returnMessagesinRange(longitude,latitude):
     allMessages = Messages.find()
     messagesinRange = []
     for current in allMessages:
-        if ((current['longitude']-longitude) * (current['longitude']-longitude) + (current['latitude']-latitude)*(current['latitude']-latitude)) <= 1:
+        if ((int(current['longitude'])-int(longitude)) * (int(current['longitude'])-int(longitude)) + (int(current['latitude'])-int(latitude))*(int(current['latitude'])-int(latitude)) <= 1:
             if messagesinRange == None:
                 messagesinRange = [current['text']]
             else:
