@@ -24,11 +24,11 @@ def main():
 		if button == button == 'SCAN':
 			Latitude = request.form['Latitude']
 			Longitude = request.form['Longitude']
-
 			return redirect('/scan')
 
 		elif button == 'NEW':
-			
+			Latitude = request.form['Latitude']
+			Longitude = request.form['Longitude']
 			return redirect('/new')
 
 
@@ -74,8 +74,6 @@ def new():
 #_______________________________________________________________NEW page has "Create Message" and "Cancel" buttons
 		if button == 'Create Message':
 			newM = request.form['line']
-			Latitude = request.form['Latitude']
-			Longitude = request.form['Longitude']
 			if newM:
 				database.writeMessage(newM,Longitude,Latitude)
 				return redirect('/')
