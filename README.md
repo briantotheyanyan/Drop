@@ -1,27 +1,17 @@
 YAN-SHAN-PHAN-WU
 ================
 
-Nothing is currently operational. It uses HTML5 Geolocation API to get lat/lon and that works fine. 
+This project is to make an app (a website) that can store messages at locations (GPS). 
 
-HTML works like this: (http://i376.photobucket.com/albums/oo202/Bu115hit/gps_zps3899be32.png)
-
-There's a global varible named "mode" in app.py. <br>
-If mode is empty, Jinja only shows main selection page. <br>
-If mode is NEW, then it shows the "create message" page. <br>
-If mode is SCAN, then it shows messages within the area. <br>
-
-Everything is efficiently in one HTML document.
+The main  page displays option, SCAN, NEWMESSAGE, LOGIN (to be implemented)  
+The SCAN page displays all messages stored at that coordinate.
+The NEW page allows you to create a new message at that coordinate.
+The LOGIN (to be implemented)
 
 
-
-
-
+It uses HTML5 Geolocation API to get lat/lon and that works fine. 
 
 <h3>I rewrote HTML/javascript, should be good. </h3>
-<h4>app.py is not yet rewritten. </h4> That is Saturday or if I'm done with Macro book report early.
+<h4>app.py is rewritten. </h4> 
 
-I did something similar for pd7-miniproject1.
-
-https://github.com/stuycs-ml7/pd7-miniproject1/blob/master/Smirnov_Wu/app.py <br>
-https://github.com/stuycs-ml7/pd7-miniproject1/blob/master/Smirnov_Wu/templates/Storynator.html
 
