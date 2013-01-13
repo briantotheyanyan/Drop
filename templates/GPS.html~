@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html>
 <body style="width: 100%; height:100%;background-color:olive;";>
@@ -58,63 +58,3 @@ document.getElementById("Longitude").value =  position.coords.longitude;
 </body>
 </html>
 
-=======
-<!DOCTYPE html>
-<html>
-<body style="width: 100%; height:100%;background-color:olive;";>
-
-<script type=text/javascript src="{{  url_for('static', filename='jquery.js') }}"></script>
-
-<form method="POST">
-
-<button type = "button" onclick="getLocation()">GPS</button>
- <input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
- <input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />
-
-<p>Longitude:{{Longitude}}<br>
-Latitude:{{Latitude}}<br>
-</p>
-
-	<input type="submit" name="button" value="SCAN">
-	<input type="submit" name="button" value="NEW">
-
-
-</form>
-
-
-
-
-<script>
-
-
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
-function showPosition(position)
-  {
-alert(position.coords.latitude)
-document.getElementById("Latitude").value  =  position.coords.latitude;
-document.getElementById("Longitude").value =  position.coords.longitude;	
-
- }
-
-
-
-    $(document).ready(function() {
-
-       getLocation();
-    });
-
-
-
-
-</script>
-<!--TBI,document ready would prescan location and display-->
-</body>
-</html>
->>>>>>> 8bd31aea3f91e636db8eaeede3ccaf5ab644edbf

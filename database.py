@@ -21,15 +21,22 @@ def verifyAccount(username,password):
 
 def writeMessage(text,longitude,latitude):
     Messages.insert({'text':text,'longitude':longitude,'latitude':latitude})
+
  
 
 def returnMessagesinRange(longitude,latitude):
     allMessages = Messages.find()
+    longitude = (eval(str(longitude)))
+    latitude = (eval(str(latitude)))
     messagesinRange = []
     for current in allMessages:
-        if ((current['longitude']-longitude) * (current['longitude']-longitude)) + ((current['latitude']-latitude)*(current['latitude']-latitude)) <= 1:
+        x=eval(str(current['longitude']))
+        y=eval(str(current['latitude']))
+        if ((longitude-x)*(longitude-x))+((latitude-y)*(latitude-y)) <= 1:
             if messagesinRange == None:
-                messagesinRange = [current['text']]
+                messagesinRange = [str(current['text'].encode('ascii','ignore'))]
             else:
-                messagesinRange.append(current['text'])
+                messagesinRange.append(str(current['text'].encode('ascii','ignore')))
     return messagesinRange
+if __name__ == '__main__':
+    Messages.drop()

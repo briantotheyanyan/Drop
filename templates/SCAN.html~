@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
+
+<script type=text/javascript src="{{
+  url_for('static', filename='jquery.js') }}"></script>
+
 <body style="width: 100%; height:100%;background-color:olive;";>
 
-
-
 <form method="POST">
- <input type="hidden" id="Latitude" name="Latitude">
- <input type="hidden" id="Longitude" name="Longitude">
+ <input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
+ <input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />
 
-<!--		Scan For Messages			-->
-{% if mode == "SCAN" %}
+Longitude:{{Longitude}}<br>
+Latitude:{{Latitude}}<br>
 
 	<input type="submit" name="button" value="BACK" >
 
@@ -22,26 +24,8 @@
 	{% else %}
 		<h1>NO MESSAGES WITHIN AREA</h1> 
 	{% endif %}
-{% endif %}
-<!--		Create Message			-->	
-{% if mode == "NEW" %}
-	<textarea rows="4" cols="80" name="line"> </textarea> <br>
-	<input type="submit" name="button" value="Create Message" onClick="getLocation()" /> <br>
-	<input type="submit" name="button" value="Cancel" />
 
-<!--		Main Selection			-->	
-{% else %}
 
-	<div id="main">
-	Latitude:<p id="Lat"></p><br>
-	Longitude:<p id="Lon"></p><br>
-
-	<input type="submit" name="button" value="SCAN" onClick="getLocation()">
-	<input type="submit" name="button" value="NEW">
-
-	</div>
-
-{% endif %}
 
 </form>
 
@@ -50,43 +34,37 @@
 
 
 
-
-
 <script>
-//html
-var Lat=document.getElementById("Lat"); 
-var Lon=document.getElementById("Lon"); 
+
 //hidden inputs
-var Latitude=document.getElementById("Latitude"); 
-var Longitude=document.getElementById("Longitude"); 
-//javascript
-var latitude = -1;
-var longitude = -1;
+
+
 
 
 function getLocation()
   {
   if (navigator.geolocation)
     {
-    navigator.geolocation.watchPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(showPosition);
     }
   else{x.innerHTML="Geolocation is not supported by this browser.";}
   }
-  
 function showPosition(position)
-  {latitude =  position.coords.latitude;
-  longitude =  position.coords.longitude;
-  	  
-  Lat.innerHTML=latitude;
-  Lon.innerHTML= longitude;  
-  
-  Latitude=latitude;
-  Longitude=longitude;
-  
-  }
-  
+  {
+alert(position.coords.latitude)
+document.getElementById("Latitude").value  =  position.coords.latitude;
+document.getElementById("Longitude").value =  position.coords.longitude;	
 
-  	  
+ }
+ 
+ 
+ 
+ 
+ 
+    $(document).ready(function() {
+       getLocation();
+    });
+ 	  
 
 
 </script>
