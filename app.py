@@ -21,14 +21,17 @@ def main():
 	else:
     		button = request.form['button']
 #_______________________________________________________________Main page has "Scan" and "New" buttons
-		if button == button == 'SCAN':
-			Latitude = request.form['Latitude']
-			Longitude = request.form['Longitude']
+		if button == 'SCAN':
+			if  request.form['Latitude'] != None:
+				Latitude = request.form['Latitude']
+				Longitude = request.form['Longitude']
 
 			return redirect('/scan')
 
 		elif button == 'NEW':
-			
+			if  request.form['Latitude'] != None:
+				Latitude = request.form['Latitude']
+				Longitude = request.form['Longitude']
 			return redirect('/new')
 
 
@@ -74,8 +77,6 @@ def new():
 #_______________________________________________________________NEW page has "Create Message" and "Cancel" buttons
 		if button == 'Create Message':
 			newM = request.form['line']
-			Latitude = request.form['Latitude']
-			Longitude = request.form['Longitude']
 			if newM:
 				database.writeMessage(newM,Longitude,Latitude)
 				return redirect('/')

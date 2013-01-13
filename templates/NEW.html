@@ -2,11 +2,12 @@
 <html>
 <body style="width: 100%; height:100%;background-color:olive;";>
 
-
+<script type=text/javascript src="{{
+  url_for('static', filename='jquery.js') }}"></script>
 
 <form method="POST">
- <input type="hidden" id="Latitude" name="Latitude">
- <input type="hidden" id="Longitude" name="Longitude">
+ <input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
+ <input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />
 
 Longitude:{{Longitude}}<br>
 Latitude:{{Latitude}}<br>
@@ -25,9 +26,6 @@ Latitude:{{Latitude}}<br>
 
 
 <script>
-//hidden inputs
-var x=document.getElementById("Latitude"); 
-var y=document.getElementById("Longitude"); 
 
 
 
@@ -38,14 +36,13 @@ function getLocation()
     {
     navigator.geolocation.watchPosition(showPosition);
     }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
+ 
   }
   
 function showPosition(position)
   {
-   x =  position.coords.latitude;
-   y =  position.coords.longitude;
-alert(x + ", " + y);
+   document.getElementById("Latitude") =  position.coords.latitude;
+   document.getElementById("Longitude") =  position.coords.longitude;
   }
   
     $(document).ready(function() {

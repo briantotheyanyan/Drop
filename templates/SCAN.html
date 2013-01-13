@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
+
+<script type=text/javascript src="{{
+  url_for('static', filename='jquery.js') }}"></script>
+
 <body style="width: 100%; height:100%;background-color:olive;";>
 
 <form method="POST">
- <input type="hidden" id="Latitude" name="Latitude">
- <input type="hidden" id="Longitude" name="Longitude">
+ <input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
+ <input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />
 
 Longitude:{{Longitude}}<br>
 Latitude:{{Latitude}}<br>
@@ -34,8 +38,8 @@ Latitude:{{Latitude}}<br>
 
 <script>
 //hidden inputs
-var x=document.getElementById("Latitude"); 
-var y=document.getElementById("Longitude"); 
+
+
 
 
 
@@ -51,9 +55,9 @@ function getLocation()
   
 function showPosition(position)
   {
-   x =  position.coords.latitude;
-   y =  position.coords.longitude;
-alert(x + ", " + y);
+   document.getElementById("Latitude") =  position.coords.latitude;
+   document.getElementById("Longitude") =  position.coords.longitude;
+
   }
   
     $(document).ready(function() {
