@@ -12,7 +12,7 @@ Longitude:{{Longitude}}<br>
 Latitude:{{Latitude}}<br>
 
 	<textarea rows="6" cols="40" name="line"> </textarea> <br>
-	<input type="submit" name="button" value="Create Message" onClick="getLocation()" /> <br>
+	<input type="submit" name="button" value="Create Message" /> <br>
 	<input type="submit" name="button" value="Cancel" />
 
 
@@ -45,9 +45,12 @@ function showPosition(position)
   {
    x =  position.coords.latitude;
    y =  position.coords.longitude;
+alert(x + ", " + y);
   }
   
-
+    $(document).ready(function() {
+       getLocation();
+    });
   	  
 
 

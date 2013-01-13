@@ -10,7 +10,7 @@
 Latitude:{{Latitude}}<br>
 </p>
 
-	<input type="submit" name="button" value="SCAN" onClick="getLocation()">
+	<input type="submit" name="button" value="SCAN">
 	<input type="submit" name="button" value="NEW">
 
 
@@ -44,12 +44,18 @@ function showPosition(position)
   {
    x =  position.coords.latitude;
    y =  position.coords.longitude;
-
+alert(x + ", " + y);
    
   }
   
 
-  	  
+
+
+    $(document).ready(function() {
+       getLocation();
+    });
+
+
 
 
 </script>
