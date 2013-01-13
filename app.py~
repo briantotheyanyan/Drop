@@ -27,13 +27,13 @@ def main():
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
 			messages = database.returnMessagesinRange(Longitude,Latitude)
-			return redirect('/scan')
+			return redirect(url_for('scan',messages=messages))
 
 		elif button == 'NEW':
 			if  request.form['Latitude'] != None:
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
-			return redirect('/new')
+			return redirect(url_for('new'))
 
 
 
@@ -48,7 +48,7 @@ def scan():
 
     	if request.method == 'GET':
 		
-    			messages = database.returnMessagesinRange(Latitude,Longitude)
+    			messages = database.returnMessagesinRange(float(Latitude),float(Longitude))
     			return render_template('SCAN.html',messages=messages, Latitude = Latitude, Longitude = Longitude)
 	else:
     		button = request.form['button']
@@ -74,7 +74,7 @@ def new():
 		if button == 'Create Message':
 			newM = request.form['line']
 			if newM:
-				database.writeMessage(newM,Longitude,Latitude)
+				database.writeMessage(newM,float(Longitude),float(Latitude))
 				return redirect('/')
 			return redirect('/new')
 
