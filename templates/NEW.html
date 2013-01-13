@@ -2,6 +2,8 @@
 <html>
 <body style="width: 100%; height:100%;background-color:olive;";>
 
+
+
 <form method="POST">
  <input type="hidden" id="Latitude" name="Latitude">
  <input type="hidden" id="Longitude" name="Longitude">
@@ -9,12 +11,12 @@
 Longitude:{{Longitude}}<br>
 Latitude:{{Latitude}}<br>
 
-	<input type="submit" name="button" value="SCAN" onClick="getLocation()">
-	<input type="submit" name="button" value="NEW">
+	<textarea rows="6" cols="40" name="line"> </textarea> <br>
+	<input type="submit" name="button" value="Create Message" onClick="getLocation()" /> <br>
+	<input type="submit" name="button" value="Cancel" />
 
 
 </form>
-
 
 
 

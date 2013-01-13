@@ -6,21 +6,33 @@ app = Flask(__name__)
 #app.secret_key = "secret"
 
 
+Latitude = 0
+Longitude = 0
 
 
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
-	global mode
+	global Longitude
+	global Latitude
+
     	if request.method == 'GET':
-		return render_template('GPS.html',mode = mode)
+		return render_template('GPS.html', Latitude = Latitude, Longitude = Longitude)
 	else:
     		button = request.form['button']
 #_______________________________________________________________Main page has "Scan" and "New" buttons
+		if button == button == 'SCAN':
+			Latitude = request.form['Latitude']
+			Longitude = request.form['Longitude']
 
-    		if button == 'BACK':
-			mode = ""
-			return redirect('/')
+			return redirect('/scan')
+
+		elif button == 'NEW':
+			
+			return redirect('/new')
+
+
+
 
 
 
@@ -29,24 +41,19 @@ def main():
 
 @app.route('/scan', methods=['GET', 'POST'])
 def scan():
-	global mode
+	global Longitude
+	global Latitude
+
     	if request.method == 'GET':
-    		
-    			Latitude = request.form['Latitude']
-			Longitude = request.form['Longitude']
+		
     			messages = database.returnMessagesinRange(Latitude,Longitude)
-    			return render_template('GPS.html',messages=messages, mode = mode)
+    			return render_template('SCAN.html',messages=messages, Latitude = Latitude, Longitude = Longitude)
 	else:
     		button = request.form['button']
 #_______________________________________________________________SCAN page has "Back" button
-		if button == button == 'SCAN':
-			mode = "SCAN"
-			return redirect('/')
-
-		elif button == 'NEW':
-			mode = "NEW"
-			return redirect('/')
-
+    		if button == 'BACK':
+			mode = ""
+			return redirect('/')		
 
 
 
@@ -57,9 +64,11 @@ def scan():
 
 @app.route('/new', methods=['GET', 'POST'])  		   
 def new():    		
-       	global mode
+	global Longitude
+	global Latitude
+
     	if request.method == 'GET':	
-		return render_template('GPS.html',mode = mode)
+		return render_template('NEW.html', Latitude = Latitude, Longitude = Longitude)
 	else:
     		button = request.form['button']
 #_______________________________________________________________NEW page has "Create Message" and "Cancel" buttons
@@ -69,11 +78,10 @@ def new():
 			Longitude = request.form['Longitude']
 			if newM:
 				writeMessage(newM,Longitude,Latitude)
-				mode = ""
-			return redirect('/')
+				return redirect('/')
+			return redirect('/new')
 
 		elif button == 'Cancel':
-			mode = ""
 			return redirect('/')
 
 

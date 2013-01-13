@@ -9,8 +9,18 @@
 Longitude:{{Longitude}}<br>
 Latitude:{{Latitude}}<br>
 
-	<input type="submit" name="button" value="SCAN" onClick="getLocation()">
-	<input type="submit" name="button" value="NEW">
+	<input type="submit" name="button" value="BACK" >
+
+	{% if messages %}
+		<ol>
+		{% for x in messages %}
+		<li>{{x}}</li>
+		{% endfor %}
+		</ol>
+	{% else %}
+		<h1>NO MESSAGES WITHIN AREA</h1> 
+	{% endif %}
+
 
 
 </form>
