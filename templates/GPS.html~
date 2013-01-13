@@ -6,7 +6,7 @@
 
 <form method="POST">
 
-<button type = "button" onclick="getLocation()">GPS</button>
+
  <input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
  <input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />
 
@@ -29,18 +29,20 @@ Latitude:{{Latitude}}<br>
 function getLocation()
   {
   if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition);
+
+    navigator.geolocation.watchPosition(showPosition);
     }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
   }
 function showPosition(position)
+ 
   {
-alert(position.coords.latitude)
-document.getElementById("Latitude").value  =  position.coords.latitude;
-document.getElementById("Longitude").value =  position.coords.longitude;	
+   document.getElementById("Latitude").value  =  position.coords.latitude;
+   document.getElementById("Longitude").value =  position.coords.longitude;
+	alert(document.getElementById("Latitude").value);
 
- }
+   
+  }
+  
 
 
 
@@ -56,4 +58,3 @@ document.getElementById("Longitude").value =  position.coords.longitude;
 <!--TBI,document ready would prescan location and display-->
 </body>
 </html>
-
