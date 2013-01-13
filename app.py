@@ -21,11 +21,11 @@ def main():
 	else:
     		button = request.form['button']
 #_______________________________________________________________Main page has "Scan" and "New" buttons
+
 		if button == 'SCAN':
 			if  request.form['Latitude'] != None:
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
-
 			return redirect('/scan')
 
 		elif button == 'NEW':
@@ -33,8 +33,6 @@ def main():
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
 			return redirect('/new')
-
-
 
 
 
@@ -62,9 +60,6 @@ def scan():
 
 
 
-
-
-
 @app.route('/new', methods=['GET', 'POST'])  		   
 def new():    		
 	global Longitude
@@ -84,9 +79,6 @@ def new():
 
 		elif button == 'Cancel':
 			return redirect('/')
-
-
-
 
 
 
