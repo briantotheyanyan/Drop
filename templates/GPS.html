@@ -6,8 +6,9 @@
  <input type="hidden" id="Latitude" name="Latitude">
  <input type="hidden" id="Longitude" name="Longitude">
 
-Longitude:{{Longitude}}<br>
+<p>Longitude:{{Longitude}}<br>
 Latitude:{{Latitude}}<br>
+</p>
 
 	<input type="submit" name="button" value="SCAN" onClick="getLocation()">
 	<input type="submit" name="button" value="NEW">
@@ -24,8 +25,8 @@ Latitude:{{Latitude}}<br>
 
 <script>
 //hidden inputs
-var Latitude=document.getElementById("Latitude"); 
-var Longitude=document.getElementById("Longitude"); 
+var x=document.getElementById("Latitude"); 
+var y=document.getElementById("Longitude"); 
 
 
 
@@ -41,8 +42,10 @@ function getLocation()
   
 function showPosition(position)
   {
-   Latitude =  position.coords.latitude;
-   Longitude =  position.coords.longitude;
+   x =  position.coords.latitude;
+   y =  position.coords.longitude;
+
+   
   }
   
 

@@ -26,8 +26,8 @@ Latitude:{{Latitude}}<br>
 
 <script>
 //hidden inputs
-var Latitude=document.getElementById("Latitude"); 
-var Longitude=document.getElementById("Longitude"); 
+var x=document.getElementById("Latitude"); 
+var y=document.getElementById("Longitude"); 
 
 
 
@@ -43,8 +43,8 @@ function getLocation()
   
 function showPosition(position)
   {
-   Latitude =  position.coords.latitude;
-   Longitude =  position.coords.longitude;
+   x =  position.coords.latitude;
+   y =  position.coords.longitude;
   }
   
 
