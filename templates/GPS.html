@@ -24,9 +24,9 @@ Latitude:{{Latitude}}<br>
 
 
 <script>
-//hidden inputs
-var x=document.getElementById("Latitude"); 
-var y=document.getElementById("Longitude"); 
+
+
+
 
 
 
@@ -37,14 +37,12 @@ function getLocation()
     {
     navigator.geolocation.watchPosition(showPosition);
     }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
   
 function showPosition(position)
   {
-   x =  position.coords.latitude;
-   y =  position.coords.longitude;
-alert(x + ", " + y);
+   document.getElementById("Latitude")  =  position.coords.latitude;
+   document.getElementById("Longitude") =  position.coords.longitude;
+
    
   }
   
