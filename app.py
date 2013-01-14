@@ -9,10 +9,32 @@ app = Flask(__name__)
 Latitude = 0
 Longitude = 0
 
-
-
 @app.route('/', methods=['GET', 'POST'])
 def main():
+	if request.method == 'GET':
+		return render_template('Login.html')
+	else:
+		if request.form['button'] == 'login':
+			if database.verifyAccount(request.form['username'],request.form['password']):
+				return redirect(url_for('home'))
+			else:
+				return redirect(url_for('main'))
+		elif request.form['button'] == 'register':
+			return redirect(url_for('register'))
+@app.route('/register',methods=['GET','POST'])
+def register():
+	if request.method == 'GET':
+		   return render_template('Register.html')
+	else:
+		if request.form['button'] == 'register':
+			if database.verifyAccount(request.form['username'],request.form['password']):
+				return redirect(url_for('register'))
+			else:
+				database.createAccount(request.form['username'],request.form['password'],[request.form['BirthMonth'],request.form['Birthday'],request.form['BirthYear']])
+				return redirect(url_for('main'))
+
+@app.route('/home', methods=['GET', 'POST'])
+def home():
 	global Longitude
 	global Latitude
 
@@ -54,7 +76,7 @@ def scan():
 #_______________________________________________________________SCAN page has "Back" button
     		if button == 'BACK':
 			mode = ""
-			return redirect('/')		
+			return redirect(url_for('home'))		
 
 
 
@@ -74,11 +96,11 @@ def new():
 			newM = request.form['line']
 			if newM:
 				database.writeMessage(newM,float(Longitude),float(Latitude))
-				return redirect('/')
+				return redirect(url_for('home'))
 			return redirect('/new')
 
 		elif button == 'Cancel':
-			return redirect('/')
+			return redirect(url_for('home'))
 
 
 
