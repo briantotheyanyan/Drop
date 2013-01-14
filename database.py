@@ -1,4 +1,3 @@
-
 from pymongo import Connection
 import math
 import unicodedata
@@ -40,4 +39,6 @@ def returnMessagesinRange(longitude,latitude):
                 messagesinRange.append(str(current['text'].encode('ascii','ignore')))
     return messagesinRange
 if __name__ == '__main__':
-    Messages.drop()
+    pass
+    #Messages.drop()
+    #Accounts.drop()
