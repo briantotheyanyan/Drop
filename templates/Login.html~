@@ -1,0 +1,9 @@
+<!DOCTYPE HTML>
+
+<h1>Login Here</h1>
+<form action = "" method = "post">
+<input type="text" name="username">
+<input type="password" name="password">
+<input type="submit" name = "button" value = "login">
+<input type="submit" name = "button" value = "register">
+</form>
