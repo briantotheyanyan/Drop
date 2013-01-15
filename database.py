@@ -35,7 +35,7 @@ def returnMessagesinRange(longitude,latitude):
     for current in allMessages:
         y=eval(str(current['longitude']))
         x=eval(str(current['latitude']))
-        if ((longitude-x)*(longitude-x))+((latitude-y)*(latitude-y)) <= 0.00089992800576:
+        if ((longitude-x)*(longitude-x))+((latitude-y)*(latitude-y)) <= (0.00089992800576*0.00089992800576):
             if messagesinRange == None:
                 messagesinRange = [str(current['text'].encode('ascii','ignore'))]
             else:
