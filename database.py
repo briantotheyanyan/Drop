@@ -22,7 +22,10 @@ def verifyAccount(username,password):
 def writeMessage(text,longitude,latitude):
     Messages.insert({'text':text,'longitude':longitude,'latitude':latitude})
 
- 
+def returnallmessages():
+    allmessages = Messages.find()
+    for current in allmessages:
+        print current['text']
 
 def returnMessagesinRange(longitude,latitude):
     allMessages = Messages.find()
