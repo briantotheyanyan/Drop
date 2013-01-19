@@ -19,23 +19,19 @@ var map;
 var markersArray = [];
 
 function initialize() {
-    var a = new google.maps.LatLng(40.731649,-73.923269);
-//  var b = new google.maps.LatLng(40.742649,-73.913269);
-//  var c = new google.maps.LatLng(40.731649,-73.913269);
+  var a = new google.maps.LatLng(37.7699298, -122.4469157);
+  var b = new google.maps.LatLng(37.7699298, -122.4569157);
+  var c = new google.maps.LatLng(37.7799298, -122.4469157);
   var mapOptions = {
-    zoom: 12	,
+    zoom: 14,
     center: a,
-    mapTypeId: google.maps.MapTypeId.HYBRID
+    mapTypeId: google.maps.MapTypeId.TERRAIN
   };
   map =  new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
-//  addMarker(a,"Let's play a game");
-//  addMarker(b,"Go to this coordinate:");
-//  addMarker(c,"Go there next");
-	{% for x in MessageList %}
-		var newMark = new google.maps.LatLng({{MessageList[0][x]}},{{MessageList[1][x]}});
-		addMarker(newMark, {{MessageList[2][x]}});
-	{% endfor %}
+  addMarker(a,"Let's play a game");
+  addMarker(b,"Go to this coordinate:");
+  addMarker(c,"Go there next");
   // Make a fuction to create all markers TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
   
   //initialize InfoWindow
@@ -45,7 +41,7 @@ function initialize() {
   for (var i = 0; i < markersArray.length; i++) {
   	  var marker = markersArray[i];
   	  google.maps.event.addListener(marker, 'click', function () {
-  	  	infowindow.setContent(this.user);
+  	  	infowindow.setContent(this.title);
 		infowindow.open(map, this);
 		map.setCenter(this.getPosition());
 	  });
@@ -54,11 +50,11 @@ function initialize() {
 
 
 
-function addMarker(location,user) {
+function addMarker(location,title) {
   marker = new google.maps.Marker({
     position: location,
     map: map,    
-    user: user
+    title: title
   });
   markersArray.push(marker);
 }
