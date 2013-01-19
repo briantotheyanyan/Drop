@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 10 }
+      #marquee {position: relative;}
+      #floater {height:10%; text-align: center;  font-size:30px; font-weight:bold; position: relative;z-index:4; }
+      #map_canvas { margin-left: auto ;  margin-right: auto ;  z-index: 3; position: relative}	
+</style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH35jXY2Yb5eApUzvZXuObiwFOpTC9xu0&sensor=true">
+</script>
+    
+    
+<script type="text/javascript">
+var map;
+var markersArray = [];
+
+function initialize() {
+  var a = new google.maps.LatLng(37.7699298, -122.4469157);
+  var b = new google.maps.LatLng(37.7699298, -122.4569157);
+  var c = new google.maps.LatLng(37.7799298, -122.4469157);
+  var mapOptions = {
+    zoom: 14,
+    center: a,
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+  };
+  map =  new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+  addMarker(a,"Let's play a game");
+  addMarker(b,"Go to this coordinate:");
+  addMarker(c,"Go there next");
+  // Make a fuction to create all markers TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+  
+  //initialize InfoWindow
+  infowindow = new google.maps.InfoWindow({  	content: "holding..."  });
+  
+  
+  for (var i = 0; i < markersArray.length; i++) {
+  	  var marker = markersArray[i];
+  	  google.maps.event.addListener(marker, 'click', function () {
+  	  	infowindow.setContent(this.title);
+		infowindow.open(map, this);
+		map.setCenter(this.getPosition());
+	  });
+	}
+}
+
+
+
+function addMarker(location,title) {
+  marker = new google.maps.Marker({
+    position: location,
+    map: map,    
+    title: title
+  });
+  markersArray.push(marker);
+}
+
+// Removes the overlays from the map, but keeps them in the array
+function clearOverlays() {
+  if (markersArray) {
+    for (i in markersArray) {
+      markersArray[i].setMap(null);
+    }
+  }
+}
+
+// Shows any overlays currently in the array
+function showOverlays() {
+  if (markersArray) {
+    for (i in markersArray) {
+      markersArray[i].setMap(map);
+    }
+  }
+}
+
+// Deletes all markers in the array by removing references to them
+function deleteOverlays() {
+  if (markersArray) {
+    for (i in markersArray) {
+      markersArray[i].setMap(null);
+    }
+    markersArray.length = 0;
+  }
+}
+    </script>
+  </head>
+  <body bgcolor="#000000" onload="initialize()" >
+    <div id="floater" style="color:#33ff33; width:100%;"> Machu Picchu </div>
+    
+    
+
+    <div id="map_canvas" style="width: 60%; height:80%"></div>
+
+  </body>
+</html>
