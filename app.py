@@ -11,11 +11,13 @@ Longitude = 0
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
+	global username
 	if request.method == 'GET':
 		return render_template('Login.html')
 	else:
 		if request.form['button'] == 'login':
 			if database.verifyAccount(request.form['username'],request.form['password']):
+				username = request.form['username']
 				return redirect(url_for('home'))
 			else:
 				return redirect(url_for('main'))
@@ -35,6 +37,7 @@ def register():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
+	global username
 	global Longitude
 	global Latitude
 
@@ -64,6 +67,7 @@ def home():
 
 @app.route('/scan', methods=['GET', 'POST'])
 def scan():
+	global username
 	global Longitude
 	global Latitude
 
@@ -83,7 +87,8 @@ def scan():
 
 
 @app.route('/new', methods=['GET', 'POST'])  		   
-def new():    		
+def new():
+	global username
 	global Longitude
 	global Latitude
 
@@ -95,7 +100,7 @@ def new():
 		if button == 'Create Message':
 			newM = request.form['line']
 			if newM:
-				database.writeMessage(newM,float(Longitude),float(Latitude))
+				database.writeMessage(newM,float(Longitude),float(Latitude),username)
 				return redirect(url_for('home'))
 			return redirect('/new')
 

@@ -19,13 +19,18 @@ def verifyAccount(username,password):
     else:
         return False
 
-def writeMessage(text,longitude,latitude):
-    Messages.insert({'text':text,'longitude':longitude,'latitude':latitude})
+def writeMessage(text,longitude,latitude,username):
+    Messages.insert({'text':text,'longitude':longitude,'latitude':latitude,'username':username})
 
-def returnallmessages():
-    allmessages = Messages.find()
-    for current in allmessages:
-        print current['text']
+def returnAllMessages():
+    allMessages = Messages.find()
+    MessageList = []
+    for current in allMessages:
+        if MessageList == None:
+            MessageList = [[allMessages['longitude'],allMessages['latitude'],allMessages['username']],]
+        else:
+            MessageList.append([allMessages['longitude'],allMessages['latitude'],allMessages['username']])
+    return MessageList
 
 def returnMessagesinRange(longitude,latitude):
     allMessages = Messages.find()
@@ -42,6 +47,7 @@ def returnMessagesinRange(longitude,latitude):
                 messagesinRange.append(str(current['text'].encode('ascii','ignore')))
     return messagesinRange
 if __name__ == '__main__':
-    pass
+    print returnAllMessages()
+    #pass
     #Messages.drop()
     #Accounts.drop()
