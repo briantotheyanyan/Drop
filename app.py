@@ -107,6 +107,11 @@ def new():
 		elif button == 'Cancel':
 			return redirect(url_for('home'))
 
+@app.route('/maps', methods=['GET', 'POST'])  		   
+def maps():
+	if request.method == 'GET':
+		MessageList = database.returnAllMessages()
+		return render_template('testing-map.html', MessageList = MessageList)
 
 
 if __name__=="__main__":

@@ -17,32 +17,31 @@
 <script type="text/javascript">
 var map;
 var markersArray = [];
+var newMark;
 
 function initialize() {
-    var a = new google.maps.LatLng(40.731649,-73.923269);
-//  var b = new google.maps.LatLng(40.742649,-73.913269);
-//  var c = new google.maps.LatLng(40.731649,-73.913269);
-  var mapOptions = {
-    zoom: 12	,
-    center: a,
-    mapTypeId: google.maps.MapTypeId.HYBRID
-  };
-  map =  new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+	//center location
+	var a = new google.maps.LatLng(40.731649,-73.923269);
+	//default options
+	var mapOptions = {
+		zoom: 12	,
+		center: a,
+		mapTypeId: google.maps.MapTypeId.HYBRID
+	};
+	//initialize options
+	map =  new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
-//  addMarker(a,"Let's play a game");
-//  addMarker(b,"Go to this coordinate:");
-//  addMarker(c,"Go there next");
+	//marks all message locations
 	{% for x in MessageList %}
-		var newMark = new google.maps.LatLng({{MessageList[0][x]}},{{MessageList[1][x]}});
-		addMarker(newMark, {{MessageList[2][x]}});
+	newMark = new google.maps.LatLng({{x[1]}},{{x[0]}});
+	addMarker(newMark, "{{x[2]}}")	;
 	{% endfor %}
-  // Make a fuction to create all markers TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO
+	
   
-  //initialize InfoWindow
-  infowindow = new google.maps.InfoWindow({  	content: "holding..."  });
-  
-  
-  for (var i = 0; i < markersArray.length; i++) {
+	//initialize InfoWindow
+	infowindow = new google.maps.InfoWindow({  	content: "holding..."  });
+	//link InfoWindow to markers, sets center
+	for (var i = 0; i < markersArray.length; i++) {
   	  var marker = markersArray[i];
   	  google.maps.event.addListener(marker, 'click', function () {
   	  	infowindow.setContent(this.user);
@@ -53,7 +52,7 @@ function initialize() {
 }
 
 
-
+//Adds a marker to the map, as well as storing in an array
 function addMarker(location,user) {
   marker = new google.maps.Marker({
     position: location,
@@ -93,7 +92,7 @@ function deleteOverlays() {
     </script>
   </head>
   <body bgcolor="#000000" onload="initialize()" >
-    <div id="floater" style="color:#33ff33; width:100%;"> Machu Picchu </div>
+    <div id="floater" style="color:#33ff33; width:100%;"> Cool Title Here </div>
     
     
 

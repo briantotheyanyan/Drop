@@ -93,20 +93,25 @@ def new():
 	global Latitude
 
     	if request.method == 'GET':	
-		return render_template('NEW.html', Latitude = Latitude, Longitude = Longitude,username)
+		return render_template('NEW.html', Latitude = Latitude, Longitude = Longitude)
 	else:
     		button = request.form['button']
 #_______________________________________________________________NEW page has "Create Message" and "Cancel" buttons
 		if button == 'Create Message':
 			newM = request.form['line']
 			if newM:
-				database.writeMessage(newM,float(Longitude),float(Latitude))
+				database.writeMessage(newM,float(Longitude),float(Latitude),username)
 				return redirect(url_for('home'))
 			return redirect('/new')
 
 		elif button == 'Cancel':
 			return redirect(url_for('home'))
 
+@app.route('/maps', methods=['GET', 'POST'])  		   
+def maps():
+	if request.method == 'GET':
+		MessageList = database.returnAllMessages()
+		return render_template('testing-map.html', MessageList = MessageList)
 
 
 if __name__=="__main__":
