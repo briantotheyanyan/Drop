@@ -26,10 +26,11 @@ def returnAllMessages():
     allMessages = Messages.find()
     MessageList = []
     for current in allMessages:
-        if MessagesList == None:
-            MessageList = [[allMessages['longitude'],allMessages['latitude'],allMessages['username']]]
+        if MessageList == None:
+            MessageList = [[allMessages['longitude'],allMessages['latitude'],allMessages['username']],]
         else:
             MessageList.append([allMessages['longitude'],allMessages['latitude'],allMessages['username']])
+    return MessageList
 
 def returnMessagesinRange(longitude,latitude):
     allMessages = Messages.find()
@@ -46,6 +47,7 @@ def returnMessagesinRange(longitude,latitude):
                 messagesinRange.append(str(current['text'].encode('ascii','ignore')))
     return messagesinRange
 if __name__ == '__main__':
-    pass
+    print returnAllMessages()
+    #pass
     #Messages.drop()
     #Accounts.drop()

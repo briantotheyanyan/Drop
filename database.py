@@ -26,10 +26,11 @@ def returnAllMessages():
     allMessages = Messages.find()
     MessageList = []
     for current in allMessages:
+        x = [current['longitude'],current['latitude'],current['username']]
         if MessageList == None:
-            MessageList = [[allMessages['longitude'],allMessages['latitude'],allMessages['username']],]
+            MessageList = [x]
         else:
-            MessageList.append([allMessages['longitude'],allMessages['latitude'],allMessages['username']])
+            MessageList.append([x])
     return MessageList
 
 def returnMessagesinRange(longitude,latitude):
