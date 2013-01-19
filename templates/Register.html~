@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+
+<h1>Register Here</h1>
+
+<form action = "" method = "post">
+<p> Username: <input type="text" name="username"></p>
+<p>
+Password: <input type="password" name="password">
+</p>
+<p> Birth Month: <input type="text" name = "BirthMonth"></p>
+<p> Birthday: <input type="text" name = "Birthday"></p>
+<p> Birth Year: <input type="text" name = "BirthYear"></p>
+<input type="submit" name = "button" value = "register">
+</form>

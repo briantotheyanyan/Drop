@@ -7,8 +7,29 @@
 <p>
 Password: <input type="password" name="password">
 </p>
-<p> Birth Month: <input type="text" name = "BirthMonth"></p>
-<p> Birthday: <input type="text" name = "Birthday"></p>
-<p> Birth Year: <input type="text" name = "BirthYear"></p>
+
+<select name="BirthMonth">
+<option value="January">January</option>	<option value="Februrary">Februrary</option>	<option value="March">March</option>	<option value="April">April</option>
+<option value="May">May</option>	<option value="June">June</option>	<option value="July">July</option>	<option value="August">August</option>
+<option value="September">September</option>	<option value="October">October</option>	<option value="November">November</option>	<option value="December">December</option>
+</select>
+
+<select name="Birthday">
+{% for number in range(1, 32)%}
+<option value="{{number}}">{{number}}</option>
+{% endfor %}
+</select>
+
+<select name="BirthYear">
+{% for number in range(2013, 1900, -1)%}
+<option value="{{number}}">{{number}}</option>
+{% endfor %}
+</select>
+
+
 <input type="submit" name = "button" value = "register">
 </form>
+
+
+
+
