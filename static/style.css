@@ -2,4 +2,11 @@
 	font-family: pix;
 	src:url('../static/victor-pixel.ttf');
 }
-
+body{
+	background-color:#FFFFFF;
+	text-align:center;
+}
+table {
+	margin: auto;
+	vertical-align:middle; 
+}

@@ -1,0 +1,17 @@
+table{
+	position:relative;
+	top:50%;
+}
+input[type="submit"]{
+	width: 75px;
+	height:75px; 
+	padding:5px;
+	background-color: #AAAAAA;
+	border: 1px solid #AAAAAA;
+	color:#000;
+	font-family:pix;
+	text-align:left;
+}
+input:hover, input:focus{
+	border-color: #000000;
+}
