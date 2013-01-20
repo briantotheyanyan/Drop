@@ -2,7 +2,10 @@ body{
 	background-color:#FFFFFF;
 	text-align:center;
 }
-
+table {
+	margin: auto;
+	vertical-align:middle; 
+}
 input[type="submit"]{
 	width: 75px;
 	height:75px; 
@@ -12,14 +15,17 @@ input[type="submit"]{
 	color:#000;
 	font-family:pix;
 	text-align:left;
-	
+}
+#submit2{
+	height:50px;
+	background-color: #CCCCCC;
 }
 input[type="text"]{
 	padding: 9px;
 	border: solid 1px #DDDDDD;
 	outline: 0;
 	font-family:pix;
-	height:22px;
+	height:32px;
 	width: 200px;
 	background: #EEEEEE;
 }
@@ -28,7 +34,7 @@ input[type="password"]{
 	border: solid 1px #DDDDDD;
 	outline: 0;
 	font: normal 13px/100% Verdana, Tahoma, sans-serif;
-	height:22px;
+	height:33px;
 	width: 200px;
 	background: #EEEEEE;
 }
@@ -39,8 +45,4 @@ input:hover, input:focus{
 	font-family: pix;
 	font-size:300%;
 }
-#canv{
-	position:absolute;
-	top:0px;
-	left:25%;
-}
+
