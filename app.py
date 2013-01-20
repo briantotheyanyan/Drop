@@ -45,25 +45,24 @@ def home():
 		return render_template('Home.html', Latitude = Latitude, Longitude = Longitude)
 	else:
     		button = request.form['button']
-#_______________________________________________________________Main page has "Scan" and "New" buttons
-
-		if button == 'SCAN':
+		if button == 'Browse':
+			messages = database.returnMessagesinRange(Latitude,Longitude)
+			#We need to find a way to use flask to send the messages over.
 			if  request.form['Latitude'] != None:
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
-			return redirect(url_for('scan'))
-
-		elif button == 'NEW':
+		elif button == 'Drop':
 			if  request.form['Latitude'] != None:
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
-			return redirect(url_for('new'))
+
+		elif button == 'Create Message':
+			newM = request.form['line']
+			if newM:
+				database.writeMessage(newM,float(Longitude),float(Latitude),username)
 
 
-
-
-
-@app.route('/scan', methods=['GET', 'POST'])
+'''@app.route('/scan', methods=['GET', 'POST'])
 def scan():
 	global username
 	global Longitude
@@ -109,7 +108,7 @@ def new():
 def maps():
 	if request.method == 'GET':
 		MessageList = database.returnAllMessages()
-		return render_template('testing-map.html', MessageList = MessageList)
+		return render_template('testing-map.html', MessageList = MessageList)'''
 
 
 if __name__=="__main__":

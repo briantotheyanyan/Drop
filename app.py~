@@ -42,7 +42,7 @@ def home():
 	global Latitude
 
     	if request.method == 'GET':
-		return render_template('GPS.html', Latitude = Latitude, Longitude = Longitude)
+		return render_template('Home.html', Latitude = Latitude, Longitude = Longitude)
 	else:
     		button = request.form['button']
 #_______________________________________________________________Main page has "Scan" and "New" buttons
@@ -58,8 +58,6 @@ def home():
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
 			return redirect(url_for('new'))
-
-
 
 
 
