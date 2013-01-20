@@ -3,27 +3,29 @@
 	src:url('../static/victor-pixel.ttf');
 }
 body{
-	background-color:#D6D6D6;
+	background-color:#E0E0E0;
 	text-align:center;
 }
 input[type="submit"]{
 	width: 75px;
 	height:75px; 
 	padding:5px;
-	background-color: #CEDEF4;
-	border: 1px solid #CEDEF4;
+	background-color: #DBEADC;
+	border: 1px solid #DBEADC;
 	color:#000;
 	font-family:pix;
+	line-height : 27px;
 }
-input{
+input[type="text"], input[type="password"]{
 	padding: 9px;
-	border: solid 1px #E5E5E5;
+	border: solid 1px #DDDDDD;
 	outline: 0;
 	font: normal 13px/100% Verdana, Tahoma, sans-serif;
 	width: 200px;
-	background: #FFFFFF;
+	background: #FFFFC8;
 }
-input:hover, input:focus {
+
+input:hover, input:focus{
 	border-color: #000000;
 }
 #drop{
