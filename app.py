@@ -42,7 +42,25 @@ def home():
 	global Latitude
 
     	if request.method == 'GET':
-		return render_template('Home.html')
+		return render_template('Home.html', Latitude = Latitude, Longitude = Longitude)
+	else:
+    		button = request.form['button']
+#_______________________________________________________________Main page has "Scan" and "New" buttons
+
+		if button == 'SCAN':
+			if  request.form['Latitude'] != None:
+				Latitude = request.form['Latitude']
+				Longitude = request.form['Longitude']
+			return redirect(url_for('scan'))
+
+		elif button == 'NEW':
+			if  request.form['Latitude'] != None:
+				Latitude = request.form['Latitude']
+				Longitude = request.form['Longitude']
+			return redirect(url_for('new'))
+
+
+
 
 
 @app.route('/scan', methods=['GET', 'POST'])
