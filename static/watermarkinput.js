@@ -79,4 +79,5 @@
 		);
 	};
 })(jQuery);
-
+$("#user").Watermark("Username");
+$("#pass").Watermark("Password");
