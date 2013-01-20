@@ -1,0 +1,11 @@
+body{
+	background-color:#D6D6D6;
+	width: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#drop{
+	font-family: pixel_font;
+	src: url('../static/victor-pixel.ttf');
+}
