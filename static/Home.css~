@@ -1,8 +1,16 @@
-table{	position:relative;
-	top:50%;
+#tbl{	
+	position:absolute;
+    top:50%;
+    text-align:center;
 }
 
-input[type="submit"]{
+table#msglist{
+    position:fixed;
+    margin-left:450px;
+    margin-top:0px;
+}
+
+input[name="button"]{
 	width: 75px;
 	height:75px; 
 	padding:5px;
@@ -19,6 +27,70 @@ input:hover, input:focus{
 
 body { height: 100%; margin: 0; padding: 10 }
 
-#floater {height:10%; text-align: center;  font-size:30px; font-weight:bold; position: relative;z-index:4; }
+div#droppg { 
+width: 1350px;
+height: 800px;
+background-color: #FFE6CE;
 
+}
+
+div#scan { 
+width: 1350px;
+height: 900px;
+background-color: #FFDBDB;
+}
+div.slideout{
+  position: absolute;
+  top: 200px;
+  left: 10px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+}
+div.slideout1{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+div.slideout_inner1 {
+  position: absolute;       
+  top: 0px;
+  left: 75px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+div.slideout_inner {
+  position: absolute;       
+  top: 50px;
+  left: -360px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+div.slideout:hover {
+  left: 20px;
+}
+div.slideout:hover .slideout_inner {
+  left: 0;
+}
+/*div#left{background-color:#FFDBDB; width:30%; height:100%; position: absolute;}
+div#info{background-color:#FFCCCC; border:2px white; width:250px; height:300px; position: relative; top: 150px; left: 75px}
+div#right{background-color:#FFDBDB; width:100%; height:900px; position: absolute;}*/
+
+
+div#account{
+width: 1350px;
+height: 900px;
+background-color:  #D1E8D1;
+}
 #map_canvas { margin-left: auto ;  margin-right: auto ;  z-index: 3; position: relative}	
+html { height: 100% }

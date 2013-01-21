@@ -1,32 +1,22 @@
-function PreSubmit(form){
-	var func=function(){alert("Hello");form.submit();}
-	setTimeout(func,1000);
-}
-
-
-
-
-/*
-
-$$("div").hide();
+$(".page").hide();
 var newpage = true;
 $("#drop").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'-8px'});
+			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
-		$("div").hide();
+		$(".page").hide();
 		$("#Drop").show();
 	}
 );
 $("#browse").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'-8px'});
+			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
-		$("div").hide();
+		$(".page").hide();
 		$("#Browse").show();
 	}
 );
@@ -34,10 +24,10 @@ $("#browse").click(
 $("#map").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'-8px'});
+			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
-		$("div").hide();
+		$(".page").hide();
 		$("#Map").show();
 	}
 );
@@ -45,12 +35,10 @@ $("#map").click(
 $("#account").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'-8px'});
+			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
-		$("div").hide();
+		$(".page").hide();
 		$("#Account").show();
 	}
 );
-
-*/
