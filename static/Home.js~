@@ -1,4 +1,14 @@
-$("div").hide();
+function PreSubmit(form){
+	var func=function(){alert("Hello");form.submit();}
+	setTimeout(func,1000);
+}
+
+
+
+
+/*
+
+$$("div").hide();
 var newpage = true;
 $("#drop").click(
 	function(){
@@ -42,3 +52,5 @@ $("#account").click(
 		$("#Account").show();
 	}
 );
+
+*/

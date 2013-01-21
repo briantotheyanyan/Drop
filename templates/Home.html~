@@ -11,20 +11,22 @@
 
 <table id="tbl" border="0">
 	<tr>
+	
+<!-- onclick="PreSubmit(this.form)" -->
 		<td width=80>
-			<input id="drop" type="submit" name="button" value="Drop">
+			<input id="drop" type="submit" name="button" value="Drop" />
 		</td>
 		<td width=80>
-			<input id="browse" type="submit" name="button" value="Browse">
+			<input id="browse" type="submit" name="button" value="Browse" />
 		</td>
 		<td width=80>	
-			<input type="submit" name="button" value="Map">
+			<input type="submit" name="button" value="Map" />
 		</td>
 		<td width=80>	
-			<input type="submit" name="button" value="Account">
+			<input type="submit" name="button" value="Account"/>
 		</td>
 		<td width=80>	
-			<input type="submit" name="button" value="Logout">
+			<input type="submit" name="button" value="Logout" />
 		</td>
 	</tr>
 </table>
@@ -36,33 +38,42 @@
 
 <!--				PAGE 1					 -->
 {% if page == "Drop"  %}
-
+<div id = "droppg">
 	 <textarea rows="6" cols="40" name="line"></textarea>
 	 <input type="submit" name="button" value="Create Message" />
-
+</div>
 {% endif %}
 <!--				PAGE 2					 -->
 {% if page == "Browse"  %}
- <!--				<div id="scan">				 -->
+<div id="scan">
 	{% if messages %}
-		<ol>
+		<table border="1">
+			<tr>
+				<th>User</th>
+				<th>Message</th>
+			</tr>
 		{% for x in messages %}
-		<li>{{x}}</li>
+		 <tr>
+		 	<td>Not yet implemented</td>
+		 	<td>{{x}}</td>
+		 </tr>
 		{% endfor %}
-		</ol>
+		</table>
 	{% else %}
 		<h1>NO MESSAGES WITHIN AREA</h1> 
 	{% endif %}
- <!--				</div>			 -->
+</div>
+	
 {% endif %}
+</form>
 <!--				PAGE 3					 -->
-{% if page == "Map"  %}
+{% if page == "Map" %}
   <body bgcolor="#000000" onload="initialize()" >
-    <div id="floater" style="color:#33ff33; width:100%;"> Cool Title Here </div>
     <div id="map_canvas" style="width: 60%; height:80%"></div>
 
   </body>
 {% endif %}
+
 
 <!--				PAGE 4					 -->
 {% if page == "Account" %}
@@ -70,9 +81,9 @@
 {% endif %}
 
 
-</form>
+
 	
-<!-- <script src="../static/Home.js" type="text/javascript"></script> -->
+ <script src="../static/Home.js" type="text/javascript">
 <script>
 var map;
 var markersArray = [];
