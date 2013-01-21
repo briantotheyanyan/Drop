@@ -1,17 +1,13 @@
-function PreSubmit(form){
+/*function PreSubmit(form){
 	var func=function(){form.submit();}
 	setTimeout(func,1000);
-}
-
-
-/*
-
-$$("div").hide();
+}*/
+$("div").hide();
 var newpage = true;
 $("#drop").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'-8px'});
+			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
 		$("div").hide();
@@ -21,7 +17,7 @@ $("#drop").click(
 $("#browse").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'-8px'});
+			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
 		$("div").hide();
@@ -32,7 +28,7 @@ $("#browse").click(
 $("#map").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'-8px'});
+			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
 		$("div").hide();
@@ -43,14 +39,10 @@ $("#map").click(
 $("#account").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'-8px'});
+			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
 		$("div").hide();
 		$("#Account").show();
 	}
 );
-
-*/
-
-

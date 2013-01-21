@@ -6,85 +6,6 @@
 <script src="../static/scripts.js" type="text/javascript"></script>
 <script type="text/javascript"    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH35jXY2Yb5eApUzvZXuObiwFOpTC9xu0&sensor=true"> </script>
 <script src="../static/map.js" type="text/javascript"></script>
-
-
-<form method="POST">
-
-<table id="tbl" border="0">
-	<tr>
-	
-<!-- onclick="PreSubmit(this.form)" -->
-		<td width=80>
-			<input id="drop" type="submit" name="button" value="Drop" />
-		</td>
-		<td width=80>
-			<input id="browse" type="submit" name="button" value="Browse" />
-		</td>
-		<td width=80>	
-			<input type="submit" name="button" value="Map" />
-		</td>
-		<td width=80>	
-			<input type="submit" name="button" value="Account"/>
-		</td>
-		<td width=80>	
-			<input type="submit" name="button" value="Logout" />
-		</td>
-	</tr>
-</table>
-
-
-	 <input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
-	 <input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />	
-
-
-<!--				PAGE 1					 -->
-{% if page == "Drop"  %}
-<div id = "droppg">
-	 <textarea rows="6" cols="40" name="line"></textarea>
-	 <input type="submit" name="button" value="Create Message" />
-</div>
-{% endif %}
-<!--				PAGE 2					 -->
-{% if page == "Browse"  %}
-<div id="scan">
-	{% if messages %}
-		<table border="1">
-			<tr>
-				<th>User</th>
-				<th>Message</th>
-			</tr>
-		{% for x in messages %}
-		 <tr>
-		 	<td>Not yet implemented</td>
-		 	<td>{{x}}</td>
-		 </tr>
-		{% endfor %}
-		</table>
-	{% else %}
-		<h1>NO MESSAGES WITHIN AREA</h1> 
-	{% endif %}
-</div>
-	
-{% endif %}
-</form>
-<!--				PAGE 3					 -->
-{% if page == "Map" %}
-  <body bgcolor="#000000" onload="initialize()" >
-    <div id="map_canvas" style="width: 60%; height:80%"></div>
-
-  </body>
-{% endif %}
-
-
-<!--				PAGE 4					 -->
-{% if page == "Account" %}
-<h1>UNDER CONSTRUCTION</h1>
-{% endif %}
-
-
-
-	
-
 <script>
 var map;
 var markersArray = [];
@@ -114,6 +35,82 @@ function initialize() {
 	
 }
 </script>
+
+<form method="POST">
+
+<table id="tbl" border="0">
+	<tr>
+<!-- onclick="PreSubmit(this.form)" -->
+		<td width=80>
+			<input id="drop" type="button" name="button" value="Drop" />
+		</td>
+		<td width=80>
+			<input id="browse" type="button" name="button" value="Browse" />
+		</td>
+		<td width=80>	
+			<input id="map" type="button" name="button" value="Map" />
+		</td>
+		<td width=80>	
+			<input id="account" type="button" name="button" value="Account"/>
+		</td>
+		<td width=80>	
+			<input id="logout" type="button" name="button" value="Logout" />
+		</td>
+	</tr>
+</table>
+
+
+	 <input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
+	 <input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />	
+
+
+<!--				PAGE 1					 -->
+<div id = "Drop">
+{% if page == "Drop"  %}
+	 <textarea rows="6" cols="40" name="line"></textarea>
+	 <input type="submit" name="button" value="Create Message" />
+{% endif %}
+</div>
+
+<!--				PAGE 2					 -->
+<div id="Browse">
+{% if page == "Browse"  %}
+	{% if messages %}
+		<table border="1">
+			<tr>
+				<th>User</th>
+				<th>Message</th>
+			</tr>
+		{% for x in messages %}
+		 <tr>
+		 	<td>Not yet implemented</td>
+		 	<td>{{x}}</td>
+		 </tr>
+		{% endfor %}
+		</table>
+	{% else %}
+		<h1>NO MESSAGES WITHIN AREA</h1> 
+	{% endif %}
+{% endif %}
+</div>
+</form>
+<!--				PAGE 3					 -->
+<div id="Map">
+{% if page == "Map" %}
+  <body bgcolor="#000000" onload="initialize()" >
+    <div id="map_canvas" style="width: 60%; height:80%"></div>
+
+  </body>
+{% endif %}
+</div>
+
+
+<!--				PAGE 4					 -->
+<div id="Account">
+{% if page == "Account" %}
+<h1>UNDER CONSTRUCTION</h1>
+{% endif %}
+</div>
 
  <script src="../static/Home.js" type="text/javascript">
 
