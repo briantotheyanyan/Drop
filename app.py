@@ -48,7 +48,7 @@ def home():
    	if request.method == 'GET':
 		MessageList = database.returnAllMessages()
 		messages = database.returnMessagesinRange(Latitude,Longitude)
-		return render_template("Home.html", MessageList=MessageList, messages=meassages, Latitude=Latitude, Longitude=Longitude)   		
+		return render_template("Home.html", MessageList=MessageList, messages=messages, Latitude=Latitude, Longitude=Longitude)   		
 	else:
 		button = request.form["button"]
 		if button == 'Create Message':
