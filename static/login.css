@@ -37,3 +37,8 @@ input:hover, input:focus{
 	font-family: pix;
 	font-size:300%;
 }
+#logintbl{
+	margin-left:auto;
+	margin-right:auto;
+	vertical-align:middle; 
+}
