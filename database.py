@@ -20,7 +20,7 @@ def verifyAccount(username,password):
         return False
 
 def writeMessage(text,longitude,latitude,username):
-    Messages.insert({'text':text,'longitude':longitude,'latitude':latitude,'username':username})
+	Messages.insert({'text':text,'longitude':longitude,'latitude':latitude,'username':username, 'date': date,'time': time})
 
 def returnAllMessages():
     allMessages = Messages.find()
