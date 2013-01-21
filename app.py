@@ -23,6 +23,7 @@ def main():
 				return redirect(url_for('main'))
 		elif request.form['button'] == 'register':
 			return redirect(url_for('register'))
+
 @app.route('/register',methods=['GET','POST'])
 def register():
 	if request.method == 'GET':
@@ -41,15 +42,14 @@ def home():
 	global Longitude
 	global Latitude
    	if request.method == 'GET':
-		if  request.form['Latitude'] != None:
-			Latitude = request.form['Latitude']
-			Longitude = request.form['Longitude']
+		Latitude = request.form['Latitude']
+		Longitude = request.form['Longitude']
 		messages = database.returnMessagesinRange(Latitude,Longitude)
-		return render_template('Home.html', messages=messages, Latitude = Latitude, Longitude = Longitude)
-		if button == 'Create Message':
-			newM = request.form['line']
-			if newM:
-				database.writeMessage(newM,float(Longitude),float(Latitude),username)
+	return render_template('Home.html', messages=messages)
+	if button == 'Create Message':
+		newM = request.form['line']
+		if newM:
+			database.writeMessage(newM,float(Longitude),float(Latitude),username)
 
 
 '''@app.route('/scan', methods=['GET', 'POST'])

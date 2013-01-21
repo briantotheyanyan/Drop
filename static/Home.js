@@ -1,22 +1,22 @@
-$("iframe").hide();
+$("div").hide();
 var newpage = true;
 $("#drop").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'0px'});
+			$("#tbl").animate({top:'-8px'});
 			newpage=false;
 		}
-		$("iframe").hide();
+		$("div").hide();
 		$("#new").show();
 	}
 );
 $("#browse").click(
 	function(){
 		if(newpage){
-			$("#tbl").animate({top:'0px'});
+			$("#tbl").animate({top:'-8px'});
 			newpage=false;
 		}
-		$("iframe").hide();
+		$("div").hide();
 		$("#scan").show();
 	}
 );

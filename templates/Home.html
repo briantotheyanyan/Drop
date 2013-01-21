@@ -3,8 +3,6 @@
 <link rel="stylesheet" type="text/css" href="../static/Home.css" />
 <script src="../static/jquery.js" type="text/javascript"></script>
 <script src="../static/scripts.js" type="text/javascript"></script>
-<input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
-<input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />
 
 <table id="tbl" border="0">
 	<tr>
@@ -26,12 +24,16 @@
 	</tr>
 </table>
 
-<div id="drop">
-	<textarea rows="6" cols="40" name="line"> </textarea> <br>
-	<input type="submit" name="button" value="Create Message" />
+<div id="new">
+	<form method="POST">
+	<input type="hidden" id="Latitude" name="Latitude" value=0 />
+	<input type="hidden" id="Longitude" name="Longitude" value=0 />
+	
+	<textarea rows="6" cols="40" name="line"></textarea><input type="submit" name="button" value="Create Message" />
+	</form>
 </div>
 
-<div id="browse">
+<div id="scan">
 	{% if messages %}
 		<ol>
 		{% for x in messages %}
