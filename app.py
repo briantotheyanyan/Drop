@@ -40,23 +40,13 @@ def home():
 	global username
 	global Longitude
 	global Latitude
-
-    	if request.method == 'GET':
-		return render_template('Home.html', Latitude = Latitude, Longitude = Longitude)
-	else:
-    		button = request.form['button']
-		if button == 'Browse':
-			messages = database.returnMessagesinRange(Latitude,Longitude)
-			#We need to find a way to use flask to send the messages over.
-			if  request.form['Latitude'] != None:
-				Latitude = request.form['Latitude']
-				Longitude = request.form['Longitude']
-		elif button == 'Drop':
-			if  request.form['Latitude'] != None:
-				Latitude = request.form['Latitude']
-				Longitude = request.form['Longitude']
-
-		elif button == 'Create Message':
+   	if request.method == 'GET':
+		if  request.form['Latitude'] != None:
+			Latitude = request.form['Latitude']
+			Longitude = request.form['Longitude']
+		messages = database.returnMessagesinRange(Latitude,Longitude)
+		return render_template('Home.html', messages=messages, Latitude = Latitude, Longitude = Longitude)
+		if button == 'Create Message':
 			newM = request.form['line']
 			if newM:
 				database.writeMessage(newM,float(Longitude),float(Latitude),username)
