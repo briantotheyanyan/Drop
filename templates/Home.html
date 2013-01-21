@@ -97,12 +97,19 @@ function initialize() {
 								<th>User</th>
 								<th>Message</th>
 							</tr>
-							{% for x in messages %}
+							
+							
+							
+							{% for x in names %}
 							<tr>
-								<td>Not yet implemented</td>
-								<td>{{x}}</td>
-							</tr>
+								<td>{{x}}</td>											
+								<td>{{messages[loop.index0]}}</td>    
+								</tr>
 							{% endfor %}
+							
+							
+							
+							
 						</table>
 					{% else %}
 						<h1>NO MESSAGES WITHIN AREA</h1> 
