@@ -1,9 +1,7 @@
 function PreSubmit(form){
-	var func=function(){alert("Hello");form.submit();}
+	var func=function(){form.submit();}
 	setTimeout(func,1000);
 }
-
-
 
 
 /*
@@ -54,3 +52,5 @@ $("#account").click(
 );
 
 */
+
+
