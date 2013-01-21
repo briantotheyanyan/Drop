@@ -15,9 +15,9 @@
 			<input id="pass" type="password" name="password">
 		</td>
 		<td align="left">
-			<input id="submit1" type="submit" name = "button" value = "login">
+			<input id="submit1" type="submit" name="button" value="login">
 			<br />
-			<input id="submit2" type="submit" name = "button" value = "register">
+			<input id="submit2" type="submit" name="button" value="register">
 		</td>
 	</tr>
 </table>

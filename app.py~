@@ -3,7 +3,7 @@ import urllib2,json
 import database
 
 app = Flask(__name__)
-#app.secret_key = "secret"
+app.secret_key = "secret"
 
 
 Latitude = 0
@@ -45,10 +45,10 @@ def home():
 		Latitude = request.form['Latitude']
 		Longitude = request.form['Longitude']
 		messages = database.returnMessagesinRange(Latitude,Longitude)
-	return render_template('Home.html', messages=messages)
-	if button == 'Create Message':
-		newM = request.form['line']
-		if newM:
+		return render_template('Home.html',messages=messages)
+	else:
+		if request.form["button"] == 'Create Message':
+			newM = request.form['line']
 			database.writeMessage(newM,float(Longitude),float(Latitude),username)
 
 
@@ -103,4 +103,5 @@ def maps():
 
 if __name__=="__main__":
     app.debug=True
+    app.config['TRAP_BAD_REQUEST_ERRORS'] = True
     app.run(port=5000)
