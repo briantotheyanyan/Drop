@@ -1,4 +1,4 @@
-table{	position:relative;
+table{	position:center;
 	top:50%;
 }
 
@@ -20,6 +20,19 @@ input:hover, input:focus{
 }
 
 body { height: 100%; margin: 0; padding: 10 }
+
+div#droppg { 
+width: 1370px;
+height: 1000px;
+background-color: #FFE6CE;
+
+}
+
+div#scan { 
+width: 1370px;
+height: 1000px;
+background-color: #FFDDED;
+}
 
 #map_canvas { margin-left: auto ;  margin-right: auto ;  z-index: 3; position: relative}	
 html { height: 100% }

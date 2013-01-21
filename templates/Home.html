@@ -38,14 +38,14 @@
 
 <!--				PAGE 1					 -->
 {% if page == "Drop"  %}
-
+<div id = "droppg">
 	 <textarea rows="6" cols="40" name="line"></textarea>
 	 <input type="submit" name="button" value="Create Message" />
-
+</div>
 {% endif %}
 <!--				PAGE 2					 -->
 {% if page == "Browse"  %}
-
+<div id="scan">
 	{% if messages %}
 		<table border="1">
 			<tr>
@@ -62,9 +62,8 @@
 	{% else %}
 		<h1>NO MESSAGES WITHIN AREA</h1> 
 	{% endif %}
+</div>
 	
-	
-
 {% endif %}
 </form>
 <!--				PAGE 3					 -->
