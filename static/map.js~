@@ -1,4 +1,8 @@
 //Adds a marker to the map, as well as storing in an array
+
+
+
+
 function addMarker(location,user) {
   marker = new google.maps.Marker({
     position: location,

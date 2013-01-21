@@ -1,4 +1,5 @@
 $(".page").hide();
+$("#map").show();
 var newpage = true;
 $("#dropbutt").click(
 	function(){
@@ -26,9 +27,11 @@ $("#mapbutt").click(
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
+			
 		}
 		$(".page").hide();
 		$("#map").show();
+		
 	}
 );
 
@@ -42,3 +45,7 @@ $("#accountbutt").click(
 		$("#account").show();
 	}
 );
+$(function() {
+initialize();
+});
+
