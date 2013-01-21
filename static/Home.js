@@ -1,8 +1,4 @@
-/*function PreSubmit(form){
-	var func=function(){form.submit();}
-	setTimeout(func,1000);
-}*/
-$("div").hide();
+$(".page").hide();
 var newpage = true;
 $("#drop").click(
 	function(){
@@ -10,7 +6,7 @@ $("#drop").click(
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
-		$("div").hide();
+		$(".page").hide();
 		$("#Drop").show();
 	}
 );
@@ -20,7 +16,7 @@ $("#browse").click(
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
-		$("div").hide();
+		$(".page").hide();
 		$("#Browse").show();
 	}
 );
@@ -31,7 +27,7 @@ $("#map").click(
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
-		$("div").hide();
+		$(".page").hide();
 		$("#Map").show();
 	}
 );
@@ -42,7 +38,7 @@ $("#account").click(
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
-		$("div").hide();
+		$(".page").hide();
 		$("#Account").show();
 	}
 );

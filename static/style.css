@@ -1,12 +1,13 @@
 @font-face {
 	font-family: pix;
-	src:url('../static/victor-pixel.ttf');
+	src:url('victor-pixel.ttf');
 }
 body{
 	background-color:#FFFFFF;
 	text-align:center;
 }
 table {
-	margin: auto;
+	margin-left:auto;
+	margin-right:auto;
 	vertical-align:middle; 
 }

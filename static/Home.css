@@ -1,6 +1,7 @@
-table#tbl{	
-    position:center;
+#tbl{	
+	position:absolute;
     top:50%;
+    text-align:center;
 }
 
 table#msglist{
