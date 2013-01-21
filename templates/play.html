@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<!DOCTYPE HTML>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <style type="text/css">
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 10 }
-      #marquee {position: relative;}
       #floater {height:10%; text-align: center;  font-size:30px; font-weight:bold; position: relative;z-index:4; }
       #map_canvas { margin-left: auto ;  margin-right: auto ;  z-index: 3; position: relative}	
 </style>
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH35jXY2Yb5eApUzvZXuObiwFOpTC9xu0&sensor=true">
+<script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH35jXY2Yb5eApUzvZXuObiwFOpTC9xu0&sensor=true">
 </script>
+
+<script src="../static/map.js" type="text/javascript"></script>
     
     
 <script type="text/javascript">
@@ -19,28 +18,21 @@ var map;
 var markersArray = [];
 var newMark;
 
+
+//WE NEED TO CHANGE THIS TO CENTER ON CURRENT LOCATION, LATER<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 function initialize() {
-	//center location
 	var a = new google.maps.LatLng(40.731649,-73.923269);
-	//default options
 	var mapOptions = {
 		zoom: 12	,
 		center: a,
 		mapTypeId: google.maps.MapTypeId.HYBRID
 	};
-	//initialize options
 	map =  new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-
-	//marks all message locations
 	{% for x in MessageList %}
 	newMark = new google.maps.LatLng({{x[1]}},{{x[0]}});
 	addMarker(newMark, "{{x[2]}}")	;
 	{% endfor %}
-	
-  
-	//initialize InfoWindow
 	infowindow = new google.maps.InfoWindow({  	content: "holding..."  });
-	//link InfoWindow to markers, sets center
 	for (var i = 0; i < markersArray.length; i++) {
   	  var marker = markersArray[i];
   	  google.maps.event.addListener(marker, 'click', function () {
@@ -51,44 +43,6 @@ function initialize() {
 	}
 }
 
-
-//Adds a marker to the map, as well as storing in an array
-function addMarker(location,user) {
-  marker = new google.maps.Marker({
-    position: location,
-    map: map,    
-    user: user
-  });
-  markersArray.push(marker);
-}
-
-// Removes the overlays from the map, but keeps them in the array
-function clearOverlays() {
-  if (markersArray) {
-    for (i in markersArray) {
-      markersArray[i].setMap(null);
-    }
-  }
-}
-
-// Shows any overlays currently in the array
-function showOverlays() {
-  if (markersArray) {
-    for (i in markersArray) {
-      markersArray[i].setMap(map);
-    }
-  }
-}
-
-// Deletes all markers in the array by removing references to them
-function deleteOverlays() {
-  if (markersArray) {
-    for (i in markersArray) {
-      markersArray[i].setMap(null);
-    }
-    markersArray.length = 0;
-  }
-}
     </script>
   </head>
   <body bgcolor="#000000" onload="initialize()" >
@@ -99,4 +53,3 @@ function deleteOverlays() {
     <div id="map_canvas" style="width: 60%; height:80%"></div>
 
   </body>
-</html>

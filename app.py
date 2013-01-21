@@ -5,7 +5,7 @@ import database
 app = Flask(__name__)
 app.secret_key = "secret"
 
-
+page = "Map"
 Latitude = 0
 Longitude = 0
 
@@ -14,6 +14,7 @@ def main():
 	global username
 	global Longitude
 	global Latitude
+	global page 
 	if request.method == 'GET':
 		return render_template('Login.html')
 	else:
@@ -22,6 +23,7 @@ def main():
 				username = request.form['username']
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
+				page = "Map"
 				return redirect(url_for('home'))
 			else:
 				return redirect(url_for('main'))
@@ -45,17 +47,53 @@ def home():
 	global username
 	global Longitude
 	global Latitude
+	global page
+	
    	if request.method == 'GET':
-		messages = database.returnMessagesinRange(Latitude,Longitude)
-		print messages
-		print Latitude
-		print Longitude
-		return render_template('Home.html',messages=messages, Latitude = Latitude, Longitude = Longitude)
+   		if page == "Drop":
+   			return render_template('Home.html', Latitude = Latitude, Longitude = Longitude, page = page)
+   		elif page == "Browse" :
+   			messages = database.returnMessagesinRange(Latitude,Longitude)
+    			return render_template('Home.html',messages=messages, Latitude = Latitude, Longitude = Longitude, page = page )   			
+   		elif page == "Map" :
+   			MessageList = database.returnAllMessages()
+   			return render_template('Home.html',MessageList = MessageList, page = page )   
+   		elif page == "Account" :
+   			return render_template('Home.html', page = page )
+   		elif username == "":
+   			page = ""
+			return redirect(url_for('main'))  	
+   		else:
+   			page = ""
+			username = ""
+			return redirect(url_for('main'))  		
+   		
 	else:
-		if request.form["button"] == 'Create Message':
+		button = request.form["button"]
+		
+		if button == "Drop":
+			page = "Drop"
+			return redirect(url_for('home'))
+		elif button == 'Create Message':
 			newM = request.form['line']
-			database.writeMessage(newM,float(Longitude),float(Latitude),username)
-		return redirect(url_for('home'))
+			if newM:
+				database.writeMessage(newM,float(Longitude),float(Latitude),username)
+			return redirect(url_for('home'))
+		elif button == "Browse":
+			page = "Browse"
+			return redirect(url_for('home'))
+		elif button == "Map":
+			page = "Map"
+			return redirect(url_for('home'))
+		elif button == "Account":
+			page = "Account"
+			return redirect(url_for('home'))
+		elif button == "Logout":
+			page = ""
+			username = ""
+			return redirect(url_for('main'))
+
+
 
 
 '''@app.route('/scan', methods=['GET', 'POST'])

@@ -10,7 +10,6 @@ function showPosition(position)
   {
 document.getElementById("Latitude").value  =  position.coords.latitude;
 document.getElementById("Longitude").value =  position.coords.longitude;
-alert(document.getElementById("Latitude").value);	
  }
 
 
