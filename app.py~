@@ -60,6 +60,9 @@ def home():
    			return render_template('Home.html',MessageList = MessageList, page = page )   
    		elif page == "Account" :
    			return render_template('Home.html', page = page )
+   		elif username == "":
+   			page = ""
+			return redirect(url_for('main'))  	
    		else:
    			page = ""
 			username = ""
