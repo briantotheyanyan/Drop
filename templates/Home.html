@@ -42,19 +42,19 @@ function initialize() {
 	<tr>
 <!-- onclick="PreSubmit(this.form)" -->
 		<td width=80>
-			<input id="drop" type="button" name="button" value="Drop" />
+			<input id="drop" type="submit" name="button" value="Drop" />
 		</td>
 		<td width=80>
-			<input id="browse" type="button" name="button" value="Browse" />
+			<input id="browse" type="submit" name="button" value="Browse" />
 		</td>
 		<td width=80>	
-			<input id="map" type="button" name="button" value="Map" />
+			<input id="map" type="submit" name="button" value="Map" />
 		</td>
 		<td width=80>	
-			<input id="account" type="button" name="button" value="Account"/>
+			<input id="account" type="submit" name="button" value="Account"/>
 		</td>
 		<td width=80>	
-			<input id="logout" type="button" name="button" value="Logout" />
+			<input id="logout" type="submit" name="button" value="Logout" />
 		</td>
 	</tr>
 </table>
@@ -69,7 +69,6 @@ function initialize() {
 {% if page == "Drop"  %}
 	 <textarea rows="6" cols="40" name="line"></textarea>
 	 <input type="submit" name="button" value="Create Message" />
-<<<<<<< HEAD
 </div>
 <div class="slideout">
   <img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
@@ -83,15 +82,11 @@ function initialize() {
 </div>	
 </div>
 {% endif %}
-=======
-{% endif %}
-</div>
->>>>>>> 7249f647d9bfb3061d1fa4fb486e1e6314112060
+
 
 <!--				PAGE 2					 -->
 <div id="Browse">
 {% if page == "Browse"  %}
-<<<<<<< HEAD
 <div id="scan">
  <h1>Browse</h1>
 </div>
@@ -103,10 +98,6 @@ function initialize() {
     <div style="width:1350px; height:1000px">
       	{% if messages %}
 		<table id="msglist" border="1">
-=======
-	{% if messages %}
-		<table border="1">
->>>>>>> 7249f647d9bfb3061d1fa4fb486e1e6314112060
 			<tr>
 				<th>User</th>
 				<th>Message</th>
@@ -121,7 +112,6 @@ function initialize() {
 	{% else %}
 		<h1>NO MESSAGES WITHIN AREA</h1> 
 	{% endif %}
-<<<<<<< HEAD
     </div>
   </div>
 </div>
@@ -135,21 +125,18 @@ function initialize() {
 </div>
 {% endif %}
 
-=======
-{% endif %}
-</div>
->>>>>>> 7249f647d9bfb3061d1fa4fb486e1e6314112060
+
 </form>
 
 <!--				PAGE 3					 -->
-<div id="Map">
-{% if page == "Map" %}
-  <body bgcolor="#000000" onload="initialize()" >
-    <div id="map_canvas" style="width: 60%; height:80%"></div>
 
+{% if page == "Map" %}
+  <body id="Map" bgcolor="#000000" onload="initialize()" >
+    <div id="map_canvas" style="width: 60%; height:80%"></div>
+    <div>HELLO</div>
   </body>
 {% endif %}
-</div>
+
 
 
 <!--				PAGE 4					 -->
@@ -172,5 +159,5 @@ function initialize() {
 {% endif %}
 </div>
 
- <script src="../static/Home.js" type="text/javascript">
+<!-- <script src="../static/Home.js" type="text/javascript"> --> 
 
