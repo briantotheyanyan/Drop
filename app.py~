@@ -18,6 +18,8 @@ def main():
 		if request.form['button'] == 'login':
 			if database.verifyAccount(request.form['username'],request.form['password']):
 				username = request.form['username']
+				Latitude = request.form['Latitude']
+				Longitude = request.form['Longitude']
 				return redirect(url_for('home'))
 			else:
 				return redirect(url_for('main'))
@@ -42,8 +44,6 @@ def home():
 	global Longitude
 	global Latitude
    	if request.method == 'GET':
-		Latitude = request.form['Latitude']
-		Longitude = request.form['Longitude']
 		messages = database.returnMessagesinRange(Latitude,Longitude)
 		return render_template('Home.html',messages=messages)
 	else:
