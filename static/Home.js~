@@ -7,7 +7,7 @@ $("#drop").click(
 			newpage=false;
 		}
 		$(".page").hide();
-		$("#Drop").show();
+		$("#drop").show();
 	}
 );
 $("#browse").click(
@@ -17,7 +17,7 @@ $("#browse").click(
 			newpage=false;
 		}
 		$(".page").hide();
-		$("#Browse").show();
+		$("#browse").show();
 	}
 );
 
@@ -28,7 +28,7 @@ $("#map").click(
 			newpage=false;
 		}
 		$(".page").hide();
-		$("#Map").show();
+		$("#map").show();
 	}
 );
 
@@ -39,6 +39,6 @@ $("#account").click(
 			newpage=false;
 		}
 		$(".page").hide();
-		$("#Account").show();
+		$("#account").show();
 	}
 );

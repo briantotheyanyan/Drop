@@ -1,6 +1,6 @@
 $(".page").hide();
 var newpage = true;
-$("#drop").click(
+$("#dropbutt").click(
 	function(){
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
@@ -10,7 +10,7 @@ $("#drop").click(
 		$("#drop").show();
 	}
 );
-$("#browse").click(
+$("#browsebutt").click(
 	function(){
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
@@ -21,7 +21,7 @@ $("#browse").click(
 	}
 );
 
-$("#map").click(
+$("#mapbutt").click(
 	function(){
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
@@ -32,7 +32,7 @@ $("#map").click(
 	}
 );
 
-$("#account").click(
+$("#accountbutt").click(
 	function(){
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
