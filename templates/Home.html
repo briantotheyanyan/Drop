@@ -7,31 +7,29 @@
 <table id="tbl" border="0">
 	<tr>
 		<td width=80>
-			<input id="drop" type="submit" name = "button" value = "Drop">
+			<input id="drop" type="submit" name="button" value="Drop">
 		</td>
 		<td width=80>
-			<input id="browse" type="submit" name = "button" value = "Browse">
+			<input id="browse" type="submit" name="button" value="Browse">
 		</td>
 		<td width=80>	
-			<input type="submit" name = "button" value = "Foo">
+			<input type="submit" name="button" value="Foo">
 		</td>
 		<td width=80>	
-			<input type="submit" name = "button" value = "Bar">
+			<input type="submit" name="button" value="Bar">
 		</td>
 		<td width=80>	
-			<input type="submit" name = "button" value = "Foo">
+			<input type="submit" name="button" value="Foo">
 		</td>
 	</tr>
 </table>
 
-<div id="new">
 	<form method="POST">
 	<input type="hidden" id="Latitude" name="Latitude" value=0 />
 	<input type="hidden" id="Longitude" name="Longitude" value=0 />
 	
 	<textarea rows="6" cols="40" name="line"></textarea><input type="submit" name="button" value="Create Message" />
 	</form>
-</div>
 
 <div id="scan">
 	{% if messages %}

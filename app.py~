@@ -23,6 +23,7 @@ def main():
 				return redirect(url_for('main'))
 		elif request.form['button'] == 'register':
 			return redirect(url_for('register'))
+
 @app.route('/register',methods=['GET','POST'])
 def register():
 	if request.method == 'GET':
@@ -40,30 +41,18 @@ def home():
 	global username
 	global Longitude
 	global Latitude
-
-    	if request.method == 'GET':
-		return render_template('Home.html', Latitude = Latitude, Longitude = Longitude)
-	else:
-    		button = request.form['button']
-#_______________________________________________________________Main page has "Scan" and "New" buttons
-
-		if button == 'SCAN':
-			if  request.form['Latitude'] != None:
-				Latitude = request.form['Latitude']
-				Longitude = request.form['Longitude']
-			return redirect(url_for('scan'))
-
-		elif button == 'NEW':
-			if  request.form['Latitude'] != None:
-				Latitude = request.form['Latitude']
-				Longitude = request.form['Longitude']
-			return redirect(url_for('new'))
+   	if request.method == 'GET':
+		Latitude = request.form['Latitude']
+		Longitude = request.form['Longitude']
+		messages = database.returnMessagesinRange(Latitude,Longitude)
+	return render_template('Home.html', messages=messages)
+	if button == 'Create Message':
+		newM = request.form['line']
+		if newM:
+			database.writeMessage(newM,float(Longitude),float(Latitude),username)
 
 
-
-
-
-@app.route('/scan', methods=['GET', 'POST'])
+'''@app.route('/scan', methods=['GET', 'POST'])
 def scan():
 	global username
 	global Longitude
@@ -109,7 +98,7 @@ def new():
 def maps():
 	if request.method == 'GET':
 		MessageList = database.returnAllMessages()
-		return render_template('testing-map.html', MessageList = MessageList)
+		return render_template('testing-map.html', MessageList = MessageList)'''
 
 
 if __name__=="__main__":
