@@ -12,6 +12,8 @@ Longitude = 0
 @app.route('/', methods=['GET', 'POST'])
 def main():
 	global username
+	global Longitude
+	global Latitude
 	if request.method == 'GET':
 		return render_template('Login.html')
 	else:
@@ -45,7 +47,10 @@ def home():
 	global Latitude
    	if request.method == 'GET':
 		messages = database.returnMessagesinRange(Latitude,Longitude)
-		return render_template('Home.html',messages=messages)
+		print messages
+		print Latitude
+		print Longitude
+		return render_template('Home.html',messages=messages, Latitude = Latitude, Longitude = Longitude)
 	else:
 		if request.form["button"] == 'Create Message':
 			newM = request.form['line']

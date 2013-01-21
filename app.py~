@@ -50,6 +50,7 @@ def home():
 		if request.form["button"] == 'Create Message':
 			newM = request.form['line']
 			database.writeMessage(newM,float(Longitude),float(Latitude),username)
+		return redirect(url_for('home'))
 
 
 '''@app.route('/scan', methods=['GET', 'POST'])

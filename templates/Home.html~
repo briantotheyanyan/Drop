@@ -25,8 +25,9 @@
 </table>
 
 	<form method="POST">
-	<input type="hidden" id="Latitude" name="Latitude" value=0 />
-	<input type="hidden" id="Longitude" name="Longitude" value=0 />
+	
+	 <input type="hidden" id="Latitude" name="Latitude" value={{Longitude}} />
+	 <input type="hidden" id="Longitude" name="Longitude" value={{Longitude}} />	
 	
 	<textarea rows="6" cols="40" name="line"></textarea><input type="submit" name="button" value="Create Message" />
 	</form>
