@@ -11,8 +11,8 @@ html{
 }
 
 table#msglist{
-    position:fixed;
-    margin-left:450px;
+    position:relative;
+    
     margin-top:0px;
 }
 
@@ -35,21 +35,21 @@ input:hover, input:focus{
 body { width: 100%; height: 100%; margin: 0; padding: 10 }
 
 div#drop { 
-width: 1400px;
-height: 965px;
+width: 100%;
+height: 100%;
 background-color: #FFE6CE;
 top:500px;
 }
 
 div#browse { 
-width: 1400px;
-height: 965px;
+width: 100%;
+height: 100%;
 background-color: #FFDBDB;
 }
 
 div#account { 
-width: 1400px;
-height: 965px;
+width: 100%;
+height:100%; 
 background-color: #CEE6DA;
 }
 
@@ -70,16 +70,16 @@ div.slideout{
 div.slideout1{
   position: absolute;
   top: 0px;
-  left: 10px;
+  left: 10%;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 div.slideout_inner1 {
-  position: absolute;       
+  position: relative;       
   top: 0px;
-  left: 75px;
+  left: 400px;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
