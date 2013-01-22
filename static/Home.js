@@ -1,6 +1,7 @@
 $(".page").hide();
 
 var newpage = true;
+var mapload = true;
 $("#dropbutt").click(
 	function(){
 		if(newpage){
@@ -27,11 +28,15 @@ $("#mapbutt").click(
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
-			initialize();
+			
 		}
 		$(".page").hide();
 		$("#map").show();
-		
+		if (mapload){
+		 	 initialize();
+		  	  mapload = false;
+		}       
+		  				
 	}
 );
 
