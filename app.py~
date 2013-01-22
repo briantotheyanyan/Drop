@@ -23,7 +23,7 @@ def main():
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
 				resp = make_response(redirect(url_for('home')))
-				resp.set_cookie('username', 'the username')
+				resp.set_cookie('username', username)
 				return resp
 			else:
 				return redirect(url_for('main'))

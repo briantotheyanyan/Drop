@@ -1,6 +1,7 @@
 $(".page").hide();
 
 var newpage = true;
+var mapload = true;
 $("#dropbutt").click(
 	function(){
 		if(newpage){
@@ -9,29 +10,36 @@ $("#dropbutt").click(
 		}
 		$(".page").hide();
 		$("#drop").show();
+		getPosition();
 	}
 );
 $("#browsebutt").click(
-	function(){
+	function(){		
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
 		$(".page").hide();
 		$("#browse").show();
+		getPosition();
 	}
 );
 
 $("#mapbutt").click(
 	function(){
+		if (mapload){
+		 	 initialize();
+		  	  mapload = false;
+		}
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
-			initialize();
+			
 		}
 		$(".page").hide();
 		$("#map").show();
-		
+		       
+		  				
 	}
 );
 
