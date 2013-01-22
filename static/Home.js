@@ -10,16 +10,18 @@ $("#dropbutt").click(
 		}
 		$(".page").hide();
 		$("#drop").show();
+		getPosition();
 	}
 );
 $("#browsebutt").click(
-	function(){
+	function(){		
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
 		}
 		$(".page").hide();
 		$("#browse").show();
+		getPosition();
 	}
 );
 
