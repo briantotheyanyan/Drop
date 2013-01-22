@@ -49,7 +49,7 @@ def home():
    	if request.method == 'GET':
 		MessageList = database.returnAllMessages()
 		messages = database.returnMessagesinRange(Latitude,Longitude)
-		names = database.returnNamesinRange(Latitude,Longitude)
+		names = database.returnMessagesbyUser(username)
 		time = database.returnTimeinRange(Latitude,Longitude)
 		return render_template("Home.html", MessageList=MessageList, messages=messages, Latitude=Latitude, Longitude=Longitude, names = names, time =time)   		
 	else:
