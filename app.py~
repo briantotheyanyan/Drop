@@ -12,8 +12,6 @@ Longitude = 0
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
-	global Longitude
-	global Latitude
 	if request.method == 'GET':
 		return render_template('Login.html')
 	else:
@@ -24,6 +22,8 @@ def main():
 				Longitude = request.form['Longitude']
 				resp = make_response(redirect(url_for('home')))
 				resp.set_cookie('username', username)
+				resp.set_cookie('Longitude', Longitude)
+				resp.set_cookie('Latitude', Latitude)
 				return resp
 			else:
 				return redirect(url_for('main'))
@@ -44,25 +44,31 @@ def register():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-	global Longitude
-	global Latitude
 	
    	if request.method == 'GET':
+                username = request.cookies.get('username')
+		Latitude = request.cookies.get('Latitude')
+		Longitude = request.cookies.get('Longitude')
 		MessageList = database.returnAllMessages()
 		messages = database.returnMessagesinRange(Latitude,Longitude)
 		names = database.returnNamesinRange(Latitude,Longitude)
 		time = database.returnTimeinRange(Latitude,Longitude)
-		username = request.cookies.get('username')
+		
 		return render_template("Home.html", MessageList=MessageList, messages=messages, Latitude=Latitude, Longitude=Longitude, names = names, time =time, username=username)   		
 	else:
 		button = request.form["button"]
 		if button == 'Create Message':
 			newM = request.form['line']
+			Latitude = request.form['Latitude']
+			Longitude = request.form['Longitude']
 			time = strftime("%a, %b %d, %Y %I:%M:%S %p %Z", gmtime())
 			username = request.cookies.get('username')
+			resp = make_response(redirect(url_for('home')))
+			resp.set_cookie('Longitude', Longitude)
+			resp.set_cookie('Latitude', Latitude)
 			if newM:
 				database.writeMessage(newM,float(Longitude),float(Latitude),username, time)
-			return redirect(url_for('home'))
+			return resp
 		elif button == "Logout":
 			page = ""
 			username = ""

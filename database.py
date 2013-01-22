@@ -87,9 +87,11 @@ def returnMessagesbyUser(username):
     for current in allMessages:
         if current['username']==username:
             if messagesbyUser == None:
-                messagesbyUser = [current]
+            	    x = str(current['text'].encode('ascii','ignore')), str(current['time'].encode('ascii','ignore'))
+            	    messagesbyUser = [x]
             else:
-                messagesbyUser.append(current)
+            	x = str(current['text'].encode('ascii','ignore')), str(current['time'].encode('ascii','ignore'))
+                messagesbyUser.append(x)
     return messagesbyUser
     
 if __name__ == '__main__':

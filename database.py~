@@ -19,8 +19,8 @@ def verifyAccount(username,password):
     else:
         return False
 
-def writeMessage(text,longitude,latitude,username):
-	Messages.insert({'text':text,'longitude':longitude,'latitude':latitude,'username':username, 'date': date,'time': time})
+def writeMessage(text,longitude,latitude,username,time):
+	Messages.insert({'text':text,'longitude':longitude,'latitude':latitude,'username':username,'time':time})
 
 def returnAllMessages():
     allMessages = Messages.find()
@@ -65,6 +65,21 @@ def returnNamesinRange(longitude,latitude):
             else:
                 namesinRange.append(str(current['username'].encode('ascii','ignore')))
     return namesinRange   
+    
+def returnTimeinRange(longitude,latitude):
+    allMessages = Messages.find()
+    longitude = (eval(str(longitude)))
+    latitude = (eval(str(latitude)))
+    time = []
+    for current in allMessages:
+        y=eval(str(current['longitude']))
+        x=eval(str(current['latitude']))
+        if ((longitude-x)*(longitude-x))+((latitude-y)*(latitude-y)) <= (0.00089992800576*0.00089992800576):
+            if time == None:
+                time = [str(current['time'].encode('ascii','ignore'))]
+            else:
+                time.append(str(current['time'].encode('ascii','ignore')))	
+    return time  
     
 def returnMessagesbyUser(username):
     allMessages = Messages.find()

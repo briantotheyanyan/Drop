@@ -50,11 +50,12 @@ def home():
 		Latitude = request.cookies.get('Latitude')
 		Longitude = request.cookies.get('Longitude')
 		MessageList = database.returnAllMessages()
+		mymessages = database.returnMessagesbyUser(username)
 		messages = database.returnMessagesinRange(Latitude,Longitude)
 		names = database.returnNamesinRange(Latitude,Longitude)
 		time = database.returnTimeinRange(Latitude,Longitude)
 		
-		return render_template("Home.html", MessageList=MessageList, messages=messages, Latitude=Latitude, Longitude=Longitude, names = names, time =time, username=username)   		
+		return render_template("Home.html", MessageList=MessageList, messages=messages, Latitude=Latitude, Longitude=Longitude, names = names, time =time, username=username, mymessages = mymessages)   		
 	else:
 		button = request.form["button"]
 		if button == 'Create Message':
