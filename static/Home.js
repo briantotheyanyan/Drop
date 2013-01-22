@@ -4,40 +4,50 @@ var newpage = true;
 var mapload = true;
 $("#dropbutt").click(
 	function(){
-		if(newpage){
-			$("#tbl").animate({top:'0px'});
-			newpage=false;
+		$(".selection").show();
+		$("#dropbutt").hide();
+		if(newpage != "drop"){
+			$("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
+			
+			newpage="drop";
 		}
 		$(".page").hide();
-		$("#drop").show();
+		$("#drop").show(1500);
+		
 		getPosition();
 	}
 );
 $("#browsebutt").click(
-	function(){		
-		if(newpage){
-			$("#tbl").animate({top:'0px'});
-			newpage=false;
+	function(){
+		$(".selection").show();
+		$("#browsebutt").hide();
+		if(newpage != "browse"){
+			$("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
+			
+			newpage="browse";
 		}
 		$(".page").hide();
-		$("#browse").show();
+		$("#browse").show(1500);
 		getPosition();
 	}
 );
 
 $("#mapbutt").click(
 	function(){
+		$(".selection").show();
+		$("#mapbutt").hide();
 		if (mapload){
-		 	 initialize();
+			 setTimeout(function() {  initialize()}, 1100);
 		  	  mapload = false;
 		}
-		if(newpage){
-			$("#tbl").animate({top:'0px'});
-			newpage=false;
+		if(newpage != "map"){
+			$("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
+			newpage="map";
 			
 		}
+		
 		$(".page").hide();
-		$("#map").show();
+		$("#map").show(1000)
 		       
 		  				
 	}
@@ -45,12 +55,15 @@ $("#mapbutt").click(
 
 $("#accountbutt").click(
 	function(){
-		if(newpage){
-			$("#tbl").animate({top:'0px'});
-			newpage=false;
+		$(".selection").show();
+		$("#accountbutt").hide();
+		if(newpage != "account"){
+			$("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
+			
+			newpage="account";
 		}
 		$(".page").hide();
-		$("#account").show();
+		$("#account").show(1500);
 	}
 );
 
