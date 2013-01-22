@@ -25,6 +25,10 @@ $("#browsebutt").click(
 
 $("#mapbutt").click(
 	function(){
+		if (mapload){
+		 	 initialize();
+		  	  mapload = false;
+		}
 		if(newpage){
 			$("#tbl").animate({top:'0px'});
 			newpage=false;
@@ -32,10 +36,7 @@ $("#mapbutt").click(
 		}
 		$(".page").hide();
 		$("#map").show();
-		if (mapload){
-		 	 initialize();
-		  	  mapload = false;
-		}       
+		       
 		  				
 	}
 );
