@@ -14,7 +14,7 @@ def createAccount(username,password,birthday):
     else:
         return False
 def verifyAccount(username,password):
-    if Accounts.find({'usernames':username}).count() != 0:
+    if Accounts.find({'usernames':username,'password':password}).count() != 0:
         return True
     else:
         return False
@@ -87,9 +87,11 @@ def returnMessagesbyUser(username):
     for current in allMessages:
         if current['username']==username:
             if messagesbyUser == None:
-                messagesbyUser = [current]
+            	    x = str(current['text'].encode('ascii','ignore')), str(current['time'].encode('ascii','ignore'))
+            	    messagesbyUser = [x]
             else:
-                messagesbyUser.append(current)
+            	x = str(current['text'].encode('ascii','ignore')), str(current['time'].encode('ascii','ignore'))
+                messagesbyUser.append(x)
     return messagesbyUser
     
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ def createAccount(username,password,birthday):
     else:
         return False
 def verifyAccount(username,password):
-    if Accounts.find({'usernames':username}).count() != 0:
+    if Accounts.find({'usernames':username,'passwords':password}).count() != 0:
         return True
     else:
         return False
