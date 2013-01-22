@@ -1,9 +1,10 @@
 #tbl{
-	position:relative;
+	position:fixed;
 	top:300px;
-	margin-left:auto;
-	margin-right:auto;
-    top:50%;
+	left:30% ;
+	
+	top:50%;
+	z-index:0
 }
 
 html{
@@ -32,25 +33,28 @@ input:hover, input:focus{
 }
 
 
-body { width: 100%; height: 100%; margin: 0; padding: 10 }
+body {z-index:2; position:relative; width: 100%; height: 100%; margin: 0; padding: 10 }
 
 div#drop { 
 width: 100%;
 height: 100%;
 background-color: #FFE6CE;
 top:500px;
+
 }
 
 div#browse { 
 width: 100%;
 height: 100%;
 background-color: #FFDBDB;
+
 }
 
 div#account { 
 width: 100%;
 height:100%; 
 background-color: #CEE6DA;
+
 }
 
 div#map { 
@@ -58,8 +62,9 @@ height:100%;
 }
 
 div.slideout{
+	
   position: absolute;
-  top: 250px;
+  top: 120px;
   left: 10px;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
@@ -70,7 +75,7 @@ div.slideout{
 div.slideout1{
   position: absolute;
   top: 0px;
-  left: 10%;
+  left: 400px;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
@@ -79,14 +84,15 @@ div.slideout1{
 div.slideout_inner1 {
   position: relative;       
   top: 0px;
-  left: 400px;
+  left: 30%;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 div.slideout_inner {
-  position: absolute;       
+  position: absolute; 
+  
   top: 60px;
   left: -360px;
   -webkit-transition-duration: 0.3s;

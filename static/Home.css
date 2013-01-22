@@ -1,10 +1,10 @@
 #tbl{
 	position:fixed;
 	top:300px;
-	margin-left:30% ;
-	margin-right:auto;
-    top:50%;
-    z-index:0
+	left:30% ;
+	
+	top:50%;
+	z-index:0
 }
 
 html{
@@ -75,7 +75,7 @@ div.slideout{
 div.slideout1{
   position: absolute;
   top: 0px;
-  left: 10%;
+  left: 400px;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
@@ -84,7 +84,7 @@ div.slideout1{
 div.slideout_inner1 {
   position: relative;       
   top: 0px;
-  left: 400px;
+  left: 30%;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
@@ -111,4 +111,5 @@ div.slideout:hover .slideout_inner {
 	margin-right: auto ;  
 	z-index: 3; 
 	position: relative;
+	top:15%;
 }	

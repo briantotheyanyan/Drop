@@ -54,7 +54,7 @@ input:hover, input:focus{
 #bottombartext{
     position:absolute;
     font-family:pix;
-    font-color:#AAAAAA;
+    color:#AAAAAA;
     right:0;
     bottom:0;
 }
