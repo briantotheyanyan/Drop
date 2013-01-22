@@ -19,7 +19,7 @@ def verifyAccount(username,password):
     else:
         return False
 
-def writeMessage(text,longitude,latitude,username):
+def writeMessage(text,longitude,latitude,username,date,time):
 	Messages.insert({'text':text,'longitude':longitude,'latitude':latitude,'username':username, 'date': date,'time': time})
 
 def returnAllMessages():
