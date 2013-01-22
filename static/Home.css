@@ -6,6 +6,10 @@
     top:50%;
 }
 
+html{
+  height:100%;
+}
+
 table#msglist{
     position:fixed;
     margin-left:450px;
@@ -47,6 +51,10 @@ div#account {
 width: 1400px;
 height: 965px;
 background-color: #CEE6DA;
+}
+
+div#map { 
+height:100%;
 }
 
 div.slideout{
