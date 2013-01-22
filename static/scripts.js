@@ -5,11 +5,22 @@ function showPosition(position){
 }
 
 if (navigator.geolocation){
-	navigator.geolocation.getCurrentPosition(showPosition);
-	
-}else{
+	navigator.geolocation.getCurrentPosition(showPosition);	
+}
+else{
 	document.getElementById("Latitude").value  =  0;
 	document.getElementById("Longitude").value =  0;
+}
+
+function getPosition(){
+	if (navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(showPosition);	
+		
+	}
+	else{
+		document.getElementById("Latitude").value  =  0;
+		document.getElementById("Longitude").value =  0;
+	}
 }
 
 
