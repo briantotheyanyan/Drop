@@ -78,7 +78,7 @@ def returnTimeinRange(longitude,latitude):
             if time == None:
                 time = [str(current['time'].encode('ascii','ignore'))]
             else:
-                time.append(str(current['time'].encode('ascii','ignore')))
+                time.append(str(current['time'].encode('ascii','ignore')))	
     return time  
     
 def returnMessagesbyUser(username):
