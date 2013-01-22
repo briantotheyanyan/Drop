@@ -1,4 +1,5 @@
 from flask import request,Flask,render_template, url_for,redirect,request
+from time import gmtime, strftime
 import urllib2,json
 import database
 
@@ -49,13 +50,15 @@ def home():
 		MessageList = database.returnAllMessages()
 		messages = database.returnMessagesinRange(Latitude,Longitude)
 		names = database.returnNamesinRange(Latitude,Longitude)
-		return render_template("Home.html", MessageList=MessageList, messages=messages, Latitude=Latitude, Longitude=Longitude, names = names)   		
+		time = database.returnTimeinRange(Latitude,Longitude)
+		return render_template("Home.html", MessageList=MessageList, messages=messages, Latitude=Latitude, Longitude=Longitude, names = names, time =time)   		
 	else:
 		button = request.form["button"]
 		if button == 'Create Message':
 			newM = request.form['line']
+			time = strftime("%a, %b %d, %Y %I:%M:%S %p %Z", gmtime())
 			if newM:
-				database.writeMessage(newM,float(Longitude),float(Latitude),username)
+				database.writeMessage(newM,float(Longitude),float(Latitude),username, time)
 			return redirect(url_for('home'))
 		elif button == "Logout":
 			page = ""
