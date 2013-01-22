@@ -1,7 +1,8 @@
-from flask import request,Flask,render_template, url_for,redirect,request
+from flask import request,Flask,render_template, url_for,redirect,request,make_response
 from time import gmtime, strftime
 import urllib2,json
 import database
+
 
 app = Flask(__name__)
 app.secret_key = "secret"
@@ -11,7 +12,6 @@ Longitude = 0
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
-	global username
 	global Longitude
 	global Latitude
 	if request.method == 'GET':
@@ -22,7 +22,9 @@ def main():
 				username = request.form['username']
 				Latitude = request.form['Latitude']
 				Longitude = request.form['Longitude']
-				return redirect(url_for('home'))
+				resp = make_response(redirect(url_for('home')))
+				resp.set_cookie('username', username)
+				return resp
 			else:
 				return redirect(url_for('main'))
 		elif request.form['button'] == 'register':
@@ -42,7 +44,6 @@ def register():
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-	global username
 	global Longitude
 	global Latitude
 	
@@ -51,12 +52,14 @@ def home():
 		messages = database.returnMessagesinRange(Latitude,Longitude)
 		names = database.returnNamesinRange(Latitude,Longitude)
 		time = database.returnTimeinRange(Latitude,Longitude)
+		username = request.cookies.get('username')
 		return render_template("Home.html", MessageList=MessageList, messages=messages, Latitude=Latitude, Longitude=Longitude, names = names, time =time, username=username)   		
 	else:
 		button = request.form["button"]
 		if button == 'Create Message':
 			newM = request.form['line']
 			time = strftime("%a, %b %d, %Y %I:%M:%S %p %Z", gmtime())
+			username = request.cookies.get('username')
 			if newM:
 				database.writeMessage(newM,float(Longitude),float(Latitude),username, time)
 			return redirect(url_for('home'))
