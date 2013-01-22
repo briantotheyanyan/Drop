@@ -50,21 +50,32 @@ def returnMessagesinRange(longitude,latitude):
             else:
                 messagesinRange.append(str(current['text'].encode('ascii','ignore')))
     return messagesinRange
-    
-def returnNamesinRange(longitude,latitude):
+
+def returnMessagesinRange(longitude,latitude):
     allMessages = Messages.find()
     longitude = (eval(str(longitude)))
     latitude = (eval(str(latitude)))
-    namesinRange = []
+    messagesinRange = []
     for current in allMessages:
         y=eval(str(current['longitude']))
         x=eval(str(current['latitude']))
         if ((longitude-x)*(longitude-x))+((latitude-y)*(latitude-y)) <= (0.00089992800576*0.00089992800576):
-            if namesinRange == None:
-                namesinRange = [str(current['username'].encode('ascii','ignore'))]
+            if messagesinRange == None:
+                messagesinRange = [str(current['text'].encode('ascii','ignore'))]
             else:
-                namesinRange.append(str(current['username'].encode('ascii','ignore')))
-    return namesinRange    
+                messagesinRange.append(str(current['text'].encode('ascii','ignore')))
+    return messagesinRange
+    
+def returnMessagesbyUser(username):
+    allMessages = Messages.find()
+    messagesbyUser = []
+    for current in allMessages:
+        if current['username']==username:
+            if messagesbyUser == None:
+                messagesbyUser = [current]
+            else:
+                messagesbyUser.append(current)
+    return messagesbyUser
     
 if __name__ == '__main__':
     print returnAllMessages()
