@@ -1,5 +1,5 @@
 from flask import request,Flask,render_template, url_for,redirect,request,make_response
-from time import gmtime, strftime
+from time import gmtime, strftime, localtime
 import urllib2,json
 import database
 
@@ -62,7 +62,7 @@ def home():
 			newM = request.form['line']
 			Latitude = request.form['Latitude']
 			Longitude = request.form['Longitude']
-			time = strftime("%a, %b %d, %Y %I:%M:%S %p %Z", gmtime())
+			time = strftime("%a, %b %d, %Y %I:%M:%S %p %Z", localtime())
 			username = request.cookies.get('username')
 			resp = make_response(redirect(url_for('home')))
 			resp.set_cookie('Longitude', Longitude)
