@@ -93,7 +93,7 @@ def returnMessagesbyUser(username):
     return messagesbyUser
     
 if __name__ == '__main__':
-    print returnAllMessages()
-    #pass
+    #print returnAllMessages()
+    pass
     #Messages.drop()
     #Accounts.drop()
