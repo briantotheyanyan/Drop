@@ -1,48 +1,92 @@
 #tbl{
 	position:fixed;
 	top:300px;
-	left:30% ;
-	
+	margin: 0 auto; 
+	text-align: left;	
 	top:50%;
 	z-index:0
 }
-
+div.centered{
+text-align:center;
+}
 html{
   height:100%;
 }
 
 table#msglist{
     position:relative;
-    
     margin-top:0px;
+    font-family:pix;
 }
 
 input[name="button"]{
 	width: 75px;
 	height:75px; 
 	padding:5px;
-	background-color: #AAAAAA;
-	border: 1px solid #AAAAAA;
-	color:#000;
 	font-family:pix;
 	text-align:left;
 }
-
 input:hover, input:focus{
-	border-color: #000000;
+    border-color: #000000;
+}
+#dropbutt{
+    background-color: #FFE6CE;
+    border: 1px solid #FFE6CE;
+    color:#000;
+}
+#browsebutt{
+    background-color: #FFDBDB;
+    border: 1px solid #FFDBDB;
+    color:#000;
+}
+#mapbutt{
+    background-color: #CEFEFF;
+    border: 1px solid #CEFEFF;
+    color:#000;
+}
+#accountbutt{
+    background-color: #CEE6DA;
+    border: 1px solid #CEE6DA;
+    color:#000;
+}
+#logoutbutt{
+    background-color: #AAAAAA;
+    border: 1px solid #AAAAAA;
+    color:#000;
+}
+#createm{
+    background-color: #FFE6CE;
+    border: 1px solid #FFE6CE;
+    color:#000;
+    width:150px;
+    height:25px;
+}
+#clearem{
+    background-color: #FFE6CE;
+    border: 1px solid #FFE6CE;
+    color:#000;
+    width:50px;
+    height:25px;
 }
 
 
-body {z-index:2; position:relative; width: 100%; height: 100%; margin: 0; padding: 10 }
 
+body {z-index:2; position:relative; width: 100%; height: 100%; margin: 0; padding: 10;}
+h2{
+    font-family:pix;
+}
+#topbar{
+    height:65px;
+}
 div#drop { 
 width: 100%;
 min-height: 700px;
     height: auto !important;
     height: 700px;
-background-color: #FFE6CE;
+background: #FFE6CE url('images/map.jpg') no-repeat center center fixed;
+background-size: cover;
 top:500px;
-
+font-family:pix;
 }
 
 div#browse { 
@@ -51,7 +95,8 @@ min-height: 100%;
     height: auto !important;
     height: 100%;
 background-color: #FFDBDB;
-
+!background: url('images/browsemap.jpg') no-repeat center center fixed;
+!background-size: cover;
 }
 
 div#account { 
@@ -60,7 +105,9 @@ min-height: 100%;
     height: auto !important;
     height: 100%;
 background-color: #CEE6DA;
-
+!background: url('images/accmap.jpg') no-repeat center center fixed;
+!background-size: cover;
+font-family:pix;
 }
 
 div#map { 
@@ -68,18 +115,21 @@ height:100%;
 }
 
 div.slideout{
+    font-family:pix;
 	
-  position: absolute;
-  top: 120px;
-  left: 10px;
-  width: 100%;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    width: 100%;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
 
 div.slideout1{
+    font-family:pix;
+
   position: absolute;
   top: 0px;
   left: 400px;
@@ -89,6 +139,8 @@ div.slideout1{
   transition-duration: 0.3s;
 }
 div.slideout_inner1 {
+font-family:pix;
+
   position: relative;       
   top: 0px;
   left: 30%;
@@ -99,7 +151,7 @@ div.slideout_inner1 {
 }
 div.slideout_inner {
   position: absolute; 
-  
+font-family:pix;
   top: 60px;
   left: -360px;
   -webkit-transition-duration: 0.3s;
@@ -117,18 +169,31 @@ div.slideout:hover .slideout_inner {
 div.heading {
     position: relative;  
     font-size: 40px;
-    text-shadow: -1px 0 #AAAAAA, 0 1px #AAAAAA, 1px 0 #AAAAAA, 0 -1px #AAAAAA;
+/*    text-shadow: -1px 0 #454545, 0 1px #454545, 1px 0 #454545, 0 -1px #454545;
+*/    font-family:pix;
+
 }
 
 div span {
     height: 50%;
     position: absolute;
     overflow: hidden;  
+    font-family:pix;
+
 }
 #map_canvas { 
 	margin-left: auto ;  
 	margin-right: auto ;  
 	z-index: 3; 
 	position: relative;
-	top:15%;
+	top:0px;
 }	
+#txtarea{
+    	padding: 9px;
+	border: solid 1px #DDDDDD;
+	outline: 0;
+	font-family:pix;
+	height:200px;
+	width: 189px;
+	background: #EEEEEE;
+}
