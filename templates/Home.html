@@ -71,7 +71,10 @@ function initialize() {
 
 <!--				PAGE 1					 -->
 <div class="page" id="drop" >
-	<h1>Leave Message</h1><br>
+	<div class="heading">
+	  <div style="color: #FFD6AD"><span>Drop a Message</span></div>
+	  <div style="color:#CFAE8C">Drop a Message</div>
+	  </div>
 	<div style="margin-left:auto; margin-right:auto; width:25%">
 	<textarea rows="6" cols="30" name="line"></textarea>
 	<input type="submit" name="button" value="Create Message" />
@@ -89,7 +92,14 @@ function initialize() {
             <div class="slideout_inner" style="background-color:#FFD6AD">
 		<div style="width:350px; height:500px">
 		<div style="width:250px; height:300px; padding:10px; border:5px solid white; margin:32px">
-			<p>put info</p>
+			<div style="color:gray; margin-left:5px">
+			    <p><i>welcome to</i></p></div>
+				<center><h3>the Drop page</h3></center>
+				<p><center>This page will allow you to 'drop' a message in your current 
+				    GPS location. Simply enter a message in the provided area and press the
+				    'create message' button. To verify that you have successfully dropped
+				    your message, visit the 'Browse' or 'Account' pages.
+				</p></center>
 			</div>
 		</div>
 	</div>
@@ -99,8 +109,10 @@ function initialize() {
 </form>
 <!--				PAGE 2					 -->
 <div class="page" id="browse">
-	<h1>Browse</h1><br>
-
+	<div class="heading">
+	  <div style="color:#FFCCCC"><span>Browse Messages</span></div>
+	  <div style="color:#BA9A9A">Browse Messages</div>
+	  </div>
 	<div style="margin-left:auto; margin-right:auto; width:45%">
 	{% if messages %}
 						<table id="msglist" border="1">
@@ -139,9 +151,14 @@ function initialize() {
 			</div>
 		</div> -->
 		<div class="slideout_inner" style="background-color:#FFCCCC">
-			<div style="width:350px; height:500px">
-			<div style="width:250px; height:300px; padding:10px; border:5px solid white; margin:32px">
-				<p>put info</p>
+			<div style="width:350px; height:638px">
+			<div style="width:250px; height:250px; padding:10px; border:5px solid white; margin:32px">
+			  <div style="color:gray; margin-left:5px">
+			    <p><i>welcome to</i></p></div>
+				<center><h3>the Browse page</h3></center>
+				<p><center>This page will allow you to view all the messages dropped 
+				  by users within a 100m radius of your current GPS location. 
+				Refer to the map to see where different users have dropped their own messages.</p></center>
 			</div>
 		</div>
 	</div>
@@ -152,8 +169,7 @@ function initialize() {
 
 <!--				PAGE 3					 -->
 
-<div class="page" id="map" bgcolor="#000000" onload="initialize()" >
-<br>
+<div class="page" id="map" bgcolor="#000000" onload="initialize()" ><br>
     <div id="map_canvas" style="width:95%; height:75%"></div>
 	
 </div>
@@ -162,7 +178,10 @@ function initialize() {
 
 <!--				PAGE 4					 -->
 <div class="page" id="account">
-	<h1>Account Details</h1><br>
+<div class="heading">
+	  <div style="color:#ADD6C1"><span>Browse Messages</span></div>
+	  <div style="color:#799687">Browse Messages</div>
+	  </div>
 	<div style="margin-left:auto; margin-right:auto; width:38%">
 	  {% if mymessages %}
 		         <table id="msglist" border="1">
@@ -193,9 +212,13 @@ function initialize() {
 		    </div>
 		  </div> -->
 	<div class="slideout_inner" style="background-color:#ADD6C1">
-		<div style="width:350px; height:500px">
-		<div style="width:250px; height:300px; padding:10px; border:5px solid white; margin:32px">
-			<p>put info</p>
+		<div style="width:350px; height:638px">
+		<div style="width:250px; height:200px; padding:10px; border:5px solid white; margin:32px">
+			<div style="color:gray; margin-left:5px">
+			    <p><i>welcome to</i></p></div>
+				<center><h3>the Account page</h3></center>
+				<p><center>This page lists all of the messages you have dropped at any location,
+				and their dates and times.</p></center>
 			</div>
 		</div>
 	</div>
