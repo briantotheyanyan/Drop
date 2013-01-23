@@ -13,7 +13,6 @@ html{
 
 table#msglist{
     position:relative;
-    
     margin-top:0px;
 }
 
@@ -21,11 +20,38 @@ input[name="button"]{
 	width: 75px;
 	height:75px; 
 	padding:5px;
-	background-color: #AAAAAA;
-	border: 1px solid #AAAAAA;
-	color:#000;
 	font-family:pix;
 	text-align:left;
+}
+#dropbutt{
+    background-color: #FFE6CE;
+    border: 1px solid #FFE6CE;
+    color:#000;
+}
+#browsebutt{
+    background-color: #FFDBDB;
+    border: 1px solid #FFDBDB;
+    color:#000;
+}
+#mapbutt{
+    background-color: #CEFEFF;
+    border: 1px solid #CEFEFF;
+    color:#000;
+}
+#accountbutt{
+    background-color: #CEE6DA;
+    border: 1px solid #CEE6DA;
+    color:#000;
+}
+#logoutbutt{
+    background-color: #AAAAAA;
+    border: 1px solid #AAAAAA;
+    color:#000;
+}
+#createm{
+    background-color: #FFE6CE;
+    border: 1px solid #FFE6CE;
+    color:#000;
 }
 
 input:hover, input:focus{
@@ -33,8 +59,10 @@ input:hover, input:focus{
 }
 
 
-body {z-index:2; position:relative; width: 100%; height: 100%; margin: 0; padding: 10 }
-
+body {z-index:2; position:relative; width: 100%; height: 100%; margin: 0; padding: 10;}
+h2{
+font-family:pix;
+}
 div#drop { 
 width: 100%;
 min-height: 700px;
@@ -43,7 +71,7 @@ min-height: 700px;
 background: #FFE6CE url('images/map.jpg') no-repeat center center fixed;
 background-size: cover;
 top:500px;
-
+font-family:pix;
 }
 
 div#browse { 
@@ -64,6 +92,7 @@ min-height: 100%;
 background-color: #CEE6DA;
 !background: url('images/accmap.jpg') no-repeat center center fixed;
 !background-size: cover;
+font-family:pix;
 }
 
 div#map { 
@@ -71,18 +100,21 @@ height:100%;
 }
 
 div.slideout{
+    font-family:pix;
 	
-  position: absolute;
-  top: 120px;
-  left: 10px;
-  width: 100%;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    width: 100%;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
 
 div.slideout1{
+    font-family:pix;
+
   position: absolute;
   top: 0px;
   left: 400px;
@@ -92,6 +124,8 @@ div.slideout1{
   transition-duration: 0.3s;
 }
 div.slideout_inner1 {
+font-family:pix;
+
   position: relative;       
   top: 0px;
   left: 30%;
@@ -102,7 +136,7 @@ div.slideout_inner1 {
 }
 div.slideout_inner {
   position: absolute; 
-  
+font-family:pix;
   top: 60px;
   left: -360px;
   -webkit-transition-duration: 0.3s;
@@ -120,13 +154,17 @@ div.slideout:hover .slideout_inner {
 div.heading {
     position: relative;  
     font-size: 40px;
-    text-shadow: -1px 0 #454545, 0 1px #454545, 1px 0 #454545, 0 -1px #454545;
+/*    text-shadow: -1px 0 #454545, 0 1px #454545, 1px 0 #454545, 0 -1px #454545;
+*/    font-family:pix;
+
 }
 
 div span {
     height: 50%;
     position: absolute;
     overflow: hidden;  
+    font-family:pix;
+
 }
 #map_canvas { 
 	margin-left: auto ;  

@@ -8,54 +8,55 @@ var browser3 = document.getElementById("drop");
 var newpage = true;
 var mapload = true;
 $("#dropbutt").click(
-	function(){
-		$(".selection").show();
-		$("#dropbutt").hide();
-		if(newpage != "drop"){
-			$("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
-			
-			newpage="drop";
-		}
-		$(".page").hide();
-		$("#drop").show(1500);
-		
-		getPosition();
+    function(){
+	$(".selection").show();
+	$("#dropbutt").hide();
+	if(newpage != "drop"){
+	    $("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
+	    
+	    newpage="drop";
 	}
+	$(".page").hide();
+	$("#drop").show(1500);
+	$("body").css("background-image", "url(images/map.jpg)");
+	getPosition();
+    }
 );
 $("#browsebutt").click(
-	function(){
-		$(".selection").show();
-		$("#browsebutt").hide();
-		if(newpage != "browse"){
-			$("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
-			
-			newpage="browse";
-		}
-		$(".page").hide();
-		$("#browse").show(1500);
-		getPosition();
+    function(){
+	$(".selection").show();
+	$("#browsebutt").hide();
+	if(newpage != "browse"){
+	    $("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
+	    
+	    newpage="browse";
 	}
+	$(".page").hide();
+	$("#browse").show(1500);
+	$("body").css("background-image", "url(images/browsemap.jpg)");
+	getPosition();
+    }
 );
 
 $("#mapbutt").click(
-	function(){
-		$(".selection").show();
-		$("#mapbutt").hide();
-		if (mapload){
-			 setTimeout(function() {  initialize()}, 1100);
-		  	  mapload = false;
-		}
-		if(newpage != "map"){
-			$("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
-			newpage="map";
-			
-		}
-		
-		$(".page").hide();
-		$("#map").show(1000)
-		       
-		  				
+    function(){
+	$(".selection").show();
+	$("#mapbutt").hide();
+	if (mapload){
+	    setTimeout(function() {  initialize()}, 1100);
+	    mapload = false;
 	}
+	if(newpage != "map"){
+	    $("#tbl").animate({top:'300px', opacity: 'toggle'}).delay(1600).animate({top:'0px', opacity: 'toggle'})
+	    newpage="map";
+	    
+	}
+	
+	$(".page").hide();
+	$("#map").show(1000)
+	
+	
+    }
 );
 
 $("#accountbutt").click(
@@ -67,6 +68,7 @@ $("#accountbutt").click(
 			
 			newpage="account";
 		}
+	    	$("body").css("background-image", "url(images/accmap.jpg)");
 		$(".page").hide();
 		$("#account").show(1500);
 	}
