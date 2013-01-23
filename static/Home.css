@@ -186,7 +186,7 @@ div span {
 	margin-right: auto ;  
 	z-index: 3; 
 	position: relative;
-	top:15%;
+	top:0px;
 }	
 #txtarea{
     	padding: 9px;
