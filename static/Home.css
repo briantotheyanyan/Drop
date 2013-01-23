@@ -83,7 +83,7 @@ width: 100%;
 min-height: 700px;
     height: auto !important;
     height: 700px;
-background: #FFE6CE url('images/map.jpg') no-repeat center center fixed;
+background: #FFE6CE url('images/map.png') no-repeat center center fixed;
 background-size: cover;
 top:500px;
 font-family:pix;
@@ -94,7 +94,7 @@ width: 100%;
 min-height: 100%;
     height: auto !important;
     height: 100%;
-background: url('images/browsemap.jpg') no-repeat center center fixed;
+background: url('images/browsemap.png') no-repeat center center fixed;
 background-color: #FFDBDB;
 background-size: cover;
 }
@@ -104,8 +104,10 @@ width: 100%;
 min-height: 100%;
     height: auto !important;
     height: 100%;
-background: url('images/accmap.jpg') no-repeat center center fixed;
+background: url('images/accmap.png') no-repeat center center fixed;
+
 background-color: #CEE6DA;
+
 background-size: cover;
 font-family:pix;
 }
