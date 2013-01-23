@@ -3,6 +3,7 @@ $(".page").hide();
 
 var browser1 = document.getElementById("browse");
 var browser2 = document.getElementById("account");
+var browser3 = document.getElementById("drop");
 
 var newpage = true;
 var mapload = true;
@@ -93,10 +94,12 @@ function changeCSS(){
             	if (Math.abs(window.orientation) == 90) { // horizontal
             		browser1.style.width = "100%";
             		browser2.style.width = "100%";
+            		browser3.style.width = "100%";
             	}
             	else { // vertical
             		browser1.style.width = "150%";
             		browser2.style.width = "150%";
+            		browser3.style.width = "150%";
             	}
 
 }
