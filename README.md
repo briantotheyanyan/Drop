@@ -2,6 +2,11 @@ YAN-SHAN-PHAN-ALAN (Brian Yan, Shan Shi, Tiffany Phan and Allen Wu)
 ================
 http://ml7.stuycs.org:8181/
 
+<h2>Summary</h2>
+
+
+<h2>Things we are doing</h2>
+
 <br><br>1. <del>Login page (or redirect to register for an account page)- info: first and last name, password, age (we should set an age limit because this requires gps and might affect safety or something), email (or possibly login with facebook) </del>
 <br><br>2. <del>
  after login, transfer to a default "browsing" page with a gmap of 100m radius. On the map: clicking on a location with the red pin will show name of user and name of file/what the message is. Since we want to pretty specific with our locations (e.g. not Times Square but 42nd street, 6th ave or something), </del> 
