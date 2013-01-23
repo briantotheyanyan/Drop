@@ -51,8 +51,9 @@ width: 100%;
 min-height: 100%;
     height: auto !important;
     height: 100%;
-background-color: #FFDBDB;
-
+!background-color: #FFDBDB;
+background: url('images/browsemap.jpg') no-repeat center center fixed;
+background-size: cover;
 }
 
 div#account { 
@@ -60,8 +61,9 @@ width: 100%;
 min-height: 100%;
     height: auto !important;
     height: 100%;
-background-color: #CEE6DA;
-
+!background-color: #CEE6DA;
+background: url('images/accmap.jpg') no-repeat center center fixed;
+background-size: cover;
 }
 
 div#map { 
