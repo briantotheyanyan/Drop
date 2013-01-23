@@ -36,13 +36,13 @@ function initialize() {
 </script>
 
 
-<body>
+<body style="background-color=#D0D0D0">
 <div id="topbar" style="text-align:right; margin-right:10px; margin-top:2px">	
 <h2>hello <i>{{username}}</i></h2>	
 </div>
 
 <form method="POST"  style="display: inline; background-color: transparent;">
-
+<div class="centered">
 <table id="tbl" border="0">
 	<tr>
 
@@ -63,7 +63,7 @@ function initialize() {
 		</td>
 	</tr>
 </table>
-
+</div>
 
 	 <input type="hidden" id="Latitude" name="Latitude" value=0 />
 	 <input type="hidden" id="Longitude" name="Longitude" value=0 />	 
@@ -76,8 +76,9 @@ function initialize() {
 	  <div style="color:#4F4235">Drop a Message</div>
 	  </div>
 	<div style="margin-left:auto; margin-right:auto; width:25%">
-	<textarea rows="6" cols="30" name="line"></textarea>
+	<textarea id="txtarea" rows="6" cols="30" name="line"></textarea>
 	<input id="createm" type="submit" name="button" value="Create Message" />
+	<input id="clearem" type="button" name="button" value="Clear" />
 	</div>
 	<div class="slideout">
 		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">

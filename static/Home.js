@@ -72,7 +72,10 @@ $("#accountbutt").click(
 		$("#account").show(1500);
 	}
 );
-
+$("#clearem").click(
+    function(){
+	$("#txtarea").val('');
+});
 
 function hideAddressBar(){
   if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio)
