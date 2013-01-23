@@ -181,21 +181,22 @@ function initialize() {
 <!--				PAGE 4					 -->
 <div class="page" id="account">
 <div class="heading">
-	  <div style="color:#46574E"><span>Account Details</span></div>
-	  <div style="color:#131715">Account Details</div>
+	  <div style="color:#46574E"><span>My Messages</span></div>
+	  <div style="color:#131715">My Messages</div>
 	  </div>
 	<div style="margin-left:auto; margin-right:auto; width:38%">
 	  {% if mymessages %}
-		         <table id="msglist" border="1">
-				<tr>
-				<th><h3>Message</h3></th>
-				<th><h3>Time</h3></th>			
+		         <table id="msglist" style="background-color:#CDFFE5;border:4px solid black;border-collapse:collapse">
+
+				<tr style="border:4px solid black">
+				<th style="border:4px solid black"><h3>Message</h3></th>
+				<th style="border:4px solid black"><h3>Time</h3></th>			
 				</tr>
 						
 				{% for x in mymessages %}
-					<tr>
-					<td>{{x[0]}}</td>
-					<td>{{x[1]}}</td>	
+					<tr style="border:4px solid black">
+					<td style="border:4px solid black">{{x[0]}}</td>
+					<td style="border:4px solid black">{{x[1]}}</td>	
 					</tr>
 				{% endfor %}
 			</table>

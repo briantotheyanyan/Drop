@@ -65,7 +65,7 @@ input:hover, input:focus{
     background-color: #FFE6CE;
     border: 1px solid #FFE6CE;
     color:#000;
-    width:75px;
+    width:50px;
     height:25px;
 }
 
@@ -188,3 +188,12 @@ div span {
 	position: relative;
 	top:15%;
 }	
+#txtarea{
+    	padding: 9px;
+	border: solid 1px #DDDDDD;
+	outline: 0;
+	font-family:pix;
+	height:200px;
+	width: 189px;
+	background: #EEEEEE;
+}
