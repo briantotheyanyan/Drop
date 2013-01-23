@@ -72,19 +72,26 @@ function initialize() {
 <!--				PAGE 1					 -->
 <div class="page" id="drop">
 	<h1>Leave Message</h1><br>
+	<div style="margin-left:auto; margin-right:auto; width:25%">
+	<textarea rows="6" cols="40" name="line"></textarea>
+	<input type="submit" name="button" value="Create Message" />
+	</div>
 	<div class="slideout">
 		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
 		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
+<<<<<<< HEAD
+<!--		<div class="slideout1">
+=======
 		<div  class="slideout1">
+>>>>>>> 9936a1298311e25b9ef97c5bd2ef044850145fbb
 		  <div class="slideout_inner1" style="background-color: #FFE6CE">
 		    <div style="width:100%; height:100%">
-		     	<textarea rows="6" cols="30" name="line"></textarea>
-		     	<input type="submit" name="button" value="Create Message" />
+		     
 		     	
 		    </div>
 		    </div>
-		  </div>
-	<div class="slideout_inner" style="background-color:#FFD6AD">
+		  </div>-->
+            <div class="slideout_inner" style="background-color:#FFD6AD">
 		<div style="width:350px; height:500px">
 		<div style="width:250px; height:300px; padding:10px; border:5px solid white; margin:32px">
 			<p>put info</p>
@@ -98,13 +105,19 @@ function initialize() {
 <!--				PAGE 2					 -->
 <div class="page" id="browse">
 	<h1>Browse</h1><br>
+<<<<<<< HEAD
+	<div style="margin-left:auto; margin-right:auto; width:45%">
+	{% if messages %}
+=======
 	<div class="slideout">
 		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
 		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
 		<div class="slideout1">
 			<div class="slideout_inner1" style="background-color:#FFDBDB">
 				<div style="width:100%; height:100%">
+				<input id="backbutt" type="button" value="BACK"/><input id="morebutt" type="button" value="MORE"/>
 					{% if messages %}
+>>>>>>> 9936a1298311e25b9ef97c5bd2ef044850145fbb
 						<table id="msglist" border="1">
 							<tr>
 								<th>User</th>
@@ -121,7 +134,7 @@ function initialize() {
 								<td>{{time[loop.index0]}}</td>    
 								</tr>
 							{% endfor %}
-							
+					
 							
 							
 							
@@ -129,9 +142,17 @@ function initialize() {
 					{% else %}
 						<h1>NO MESSAGES WITHIN AREA</h1> 
 					{% endif %}
+		</div>
+	<div class="slideout">
+		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
+		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
+	<!--	<div class="slideout1">
+			<div class="slideout_inner1" style="background-color:#FFDBDB">
+				<div style="width:100%; height:100%">
+					
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="slideout_inner" style="background-color:#FFCCCC">
 			<div style="width:350px; height:500px">
 			<div style="width:250px; height:300px; padding:10px; border:5px solid white; margin:32px">
@@ -157,13 +178,8 @@ function initialize() {
 <!--				PAGE 4					 -->
 <div class="page" id="account">
 	<h1>Account Details</h1><br>
-	<div class="slideout" >
-		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
-		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
-		<div class="slideout1">
-		  <div class="slideout_inner1" style="background-color: #CEE6DA">
-		    <div style="width:100%; height:100%; background-color: #CEE6DA">
-		      {% if mymessages %}
+	<div style="margin-left:auto; margin-right:auto; width:38%">
+	  {% if mymessages %}
 		         <table id="msglist" border="1">
 				<tr>
 				<th>Message</th>
@@ -180,9 +196,17 @@ function initialize() {
 		      {% else %}
 			 <h1>NO MESSAGES WITHIN AREA</h1> 
 		      {% endif %}
+			 </div>
+	<div class="slideout" >
+		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
+		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
+	<!--	<div class="slideout1">
+		  <div class="slideout_inner1" style="background-color: #CEE6DA">
+		    <div style="width:100%; height:100%; background-color: #CEE6DA">
+		      
 		    </div>
 		    </div>
-		  </div>
+		  </div> -->
 	<div class="slideout_inner" style="background-color:#ADD6C1">
 		<div style="width:350px; height:500px">
 		<div style="width:250px; height:300px; padding:10px; border:5px solid white; margin:32px">
