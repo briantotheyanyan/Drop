@@ -55,7 +55,6 @@ $("#mapbutt").click(
 	$(".page").hide();
 	$("#map").show(1000)
 	
-	
     }
 );
 
