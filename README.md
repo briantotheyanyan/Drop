@@ -1,4 +1,4 @@
-YAN-SHAN-PHAN-ALAN
+YAN-SHAN-PHAN-ALAN (Brian Yan, Shan Shi, Tiffany Phan and Allen Wu)
 ================
 http://ml7.stuycs.org:8181/
 
