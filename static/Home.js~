@@ -74,8 +74,13 @@ $("#accountbutt").click(
 function hideAddressBar(){
   if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio)
     document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+'px';
-  setTimeout(window.scrollTo(1,1),0);
+  setTimeout(window.scrollTo(1,1),10);
 }
 window.addEventListener("load",function(){hideAddressBar();});
 window.addEventListener("orientationchange",function(){hideAddressBar();});
 
+$(window).scroll(function(){
+        if ($(window).scrollTop() == 0)    	{window.scrollTo(1,1)}
+    })
+    
+   

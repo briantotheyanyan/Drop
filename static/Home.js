@@ -1,7 +1,8 @@
 $(".page").hide();
 
 
-
+var browser1 = document.getElementById("browse");
+var browser2 = document.getElementById("account");
 
 var newpage = true;
 var mapload = true;
@@ -78,9 +79,27 @@ function hideAddressBar(){
 }
 window.addEventListener("load",function(){hideAddressBar();});
 window.addEventListener("orientationchange",function(){hideAddressBar();});
+window.addEventListener("orientationchange",function(){changeCSS();});
 
 $(window).scroll(function(){
         if ($(window).scrollTop() == 0)    	{window.scrollTo(1,1)}
     })
     
+function changeCSS(){
+	        if (window.orientation === undefined) { // desktop
+	        	return;
+            	}
+       
+            	if (Math.abs(window.orientation) == 90) { // horizontal
+            		browser1.style.width = "100%";
+            		browser2.style.width = "100%";
+            	}
+            	else { // vertical
+            		browser1.style.width = "150%";
+            		browser2.style.width = "150%";
+            	}
+
+}
+
+
    
