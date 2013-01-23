@@ -1,6 +1,6 @@
 YAN-SHAN-PHAN-ALAN
 ================
-
+http://ml7.stuycs.org:8181/
 
 <br><br>1. <del>Login page (or redirect to register for an account page)- info: first and last name, password, age (we should set an age limit because this requires gps and might affect safety or something), email (or possibly login with facebook) </del>
 <br><br>2. <del>
