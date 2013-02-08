@@ -90,23 +90,23 @@ function initialize() {
 				</div>
 			</div>
 		</div> -->
-            <div class="slideout_inner" style="background-color:#FFE8D1">
-		<div style="width:350px; height:500px">
-		<div style="width:250px; height:300px; padding:10px; border:5px solid white; margin:32px">
-			<div style="color:gray; margin-left:5px">
-			    <p><i>welcome to</i></p></div>
-				<center><h3>the Drop page</h3></center>
-				<p><center>This page will allow you to 'drop' a message in your current 
-				    GPS location. Simply enter a message in the provided area and press the
-				    'create message' button. To verify that you have successfully dropped
-				    your message, visit the 'Browse' or 'Account' pages.
-				</p></center>
+        <div class="slideout_inner" style="background-color:#FFE8D1">
+			<div style="width:350px; height:500px">
+				<div style="width:250px; height:300px; padding:10px; border:5px solid white; margin:32px">
+					<div style="color:gray; margin-left:5px">
+						<p><i>welcome to</i></p></div>
+						<center><h3>the Drop page</h3></center>
+						<p><center>
+							This page will allow you to 'drop' a message in your current 
+							GPS location. Simply enter a message in the provided area and press the
+							'create message' button. To verify that you have successfully dropped
+							your message, visit the 'Browse' or 'Account' pages.
+						</p></center>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
-</div>
-
 </form>
 <!--				PAGE 2					 -->
 <div class="page" id="browse">
@@ -128,9 +128,9 @@ function initialize() {
 							
 							{% for x in names %}
 							<tr style="border:4px solid black">
-								<td style="border:4px solid black">{{x}}</td>											
-								<td style="border:4px solid black">{{messages[loop.index0]}}</td>    
-								<td style="border:4px solid black">{{time[loop.index0]}}</td>    
+								<td style="border:4px solid black;width:5%">{{x}}</td>											
+								<td style="border:4px solid black;width:15%">{{messages[loop.index0]}}</td>    
+								<td style="border:4px solid black;width:10%">{{time[loop.index0]}}</td>    
 								</tr>
 							{% endfor %}
 					

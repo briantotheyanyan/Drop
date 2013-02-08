@@ -77,7 +77,7 @@ $("#clearem").click(
 	$("#txtarea").val('');
 });
 
-function hideAddressBar(){
+function hideAddressBtablear(){
   if(document.documentElement.scrollHeight<window.outerHeight/window.devicePixelRatio)
     document.documentElement.style.height=(window.outerHeight/window.devicePixelRatio)+'px';
   setTimeout(window.scrollTo(window.pageXOffset,1),10);
@@ -91,22 +91,22 @@ $(window).scroll(function(){
     })
     
 function changeCSS(){
-	        if (window.orientation === undefined) { // desktop
-	        	return;
-            	}
-       
-            	if (Math.abs(window.orientation) == 90) { // horizontal
-            		browser1.style.width = "100%";
-            		browser2.style.width = "100%";
-            		browser3.style.width = "100%";
-            	}
-            	else { // vertical
-            		browser1.style.width = "150%";
-            		browser2.style.width = "150%";
-            		browser3.style.width = "150%";
-            	}
+	if (window.orientation === undefined) { // desktop
+		return;
+		}
 
-}
+		if (Math.abs(window.orientation) == 90) { // horizontal
+			browser1.style.width = "100%";
+			browser2.style.width = "100%";
+			browser3.style.width = "100%";
+		}
+		else { // vertical
+			browser1.style.width = "150%";
+			browser2.style.width = "150%";
+			browser3.style.width = "150%";
+		}
+
+	}
 
 
    
