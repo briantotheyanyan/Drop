@@ -119,18 +119,18 @@ function initialize() {
 						<table id="msglist" style="background-color:#FFE6E6;border:4px solid black;border-collapse:collapse">
 
 							<tr style="border:4px solid black">
-								<th style="border:4px solid black">User</th>
-								<th style="border:4px solid black">Message</th>
-								<th style="border:4px solid black">Time</th>
+								<th style="border:4px solid black;width:5%;word-wrap: break-word">User</th>
+								<th style="border:4px solid black;width:15%;word-wrap: break-word">Message</th>
+								<th style="border:4px solid black;width:10%;word-wrap: break-word">Time</th>
 							</tr>
 							
 							
 							
 							{% for x in names %}
 							<tr style="border:4px solid black">
-								<td style="border:4px solid black;width:5%">{{x}}</td>											
-								<td style="border:4px solid black;width:15%">{{messages[loop.index0]}}</td>    
-								<td style="border:4px solid black;width:10%">{{time[loop.index0]}}</td>    
+								<td style="border:4px solid black;width:5%;word-wrap: break-word">{{x}}</td>											
+								<td style="border:4px solid black;width:15%;word-wrap: break-word">{{messages[loop.index0]}}</td>    
+								<td style="border:4px solid black;width:10%;word-wrap: break-word">{{time[loop.index0]}}</td>    
 								</tr>
 							{% endfor %}
 					
