@@ -113,35 +113,28 @@ function initialize() {
 	<div class="heading">
 	  <div style="color:#806666"><span>Browse Messages</span></div>
 	  <div style="color:#3B3131">Browse Messages</div>
-	  </div>
-	<div style="margin-left:auto; margin-right:auto; width:45%">
-	{% if messages %}
-						<table id="msglist" style="background-color:#FFE6E6;border:4px solid black;border-collapse:collapse">
+	</div>
+	<div style="margin-left:auto; margin-right:auto; width:400px">
+		{% if messages %}
+			<table id="msglist" style="background-color:#FFE6E6;border:4px solid black;border-collapse:collapse">
 
-							<tr style="border:4px solid black">
-								<th style="border:4px solid black;width:5%;word-wrap: break-word">User</th>
-								<th style="border:4px solid black;width:15%;word-wrap: break-word">Message</th>
-								<th style="border:4px solid black;width:10%;word-wrap: break-word">Time</th>
-							</tr>
-							
-							
-							
-							{% for x in names %}
-							<tr style="border:4px solid black">
-								<td style="border:4px solid black;width:5%;word-wrap: break-word">{{x}}</td>											
-								<td style="border:4px solid black;width:15%;word-wrap: break-word">{{messages[loop.index0]}}</td>    
-								<td style="border:4px solid black;width:10%;word-wrap: break-word">{{time[loop.index0]}}</td>    
-								</tr>
-							{% endfor %}
-					
-							
-							
-							
-						</table>
-					{% else %}
-						<h1 style="font-family:pix">NO MESSAGES WITHIN AREA</h1> 
-					{% endif %}
-		</div>
+				<tr style="border:4px solid black">
+					<th style="border:4px solid black;width:100px;word-wrap: break-word">User</th>
+					<th style="border:4px solid black;width:200px;word-wrap: break-word">Message</th>
+					<th style="border:4px solid black;width:100px;word-wrap: break-word">Time</th>
+				</tr>		
+				{% for x in names %}
+				<tr style="border:4px solid black">
+					<td style="border:4px solid black;width:100px;word-wrap: break-word">{{x}}</td>											
+					<td style="border:4px solid black;width:200px;word-wrap: break-word">{{messages[loop.index0]}}</td>    
+					<td style="border:4px solid black;width:100px;word-wrap: break-word">{{time[loop.index0]}}</td>    
+					</tr>
+				{% endfor %}
+			</table>
+		{% else %}
+			<h1 style="font-family:pix">NO MESSAGES WITHIN AREA</h1> 
+		{% endif %}
+	</div>
 	<div class="slideout">
 		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
 		<img src="static/images/left-arrow-gray-hi.png" alt="More Info" height="50" width="35">
