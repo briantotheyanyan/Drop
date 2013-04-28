@@ -77,56 +77,6 @@ def home():
 
 
 
-
-'''@app.route('/scan', methods=['GET', 'POST'])
-def scan():
-	global username
-	global Longitude
-	global Latitude
-
-    	if request.method == 'GET':
-		
-    			messages = database.returnMessagesinRange(Latitude,Longitude)
-    			return render_template('SCAN.html',messages=messages, Latitude = Latitude, Longitude = Longitude)
-	else:
-    		button = request.form['button']
-#_______________________________________________________________SCAN page has "Back" button
-    		if button == 'BACK':
-			mode = ""
-			return redirect(url_for('home'))		
-
-
-
-
-
-@app.route('/new', methods=['GET', 'POST'])  		   
-def new():
-	global username
-	global Longitude
-	global Latitude
-
-    	if request.method == 'GET':	
-		return render_template('NEW.html', Latitude = Latitude, Longitude = Longitude)
-	else:
-    		button = request.form['button']
-#_______________________________________________________________NEW page has "Create Message" and "Cancel" buttons
-		if button == 'Create Message':
-			newM = request.form['line']
-			if newM:
-				database.writeMessage(newM,float(Longitude),float(Latitude),username)
-				return redirect(url_for('home'))
-			return redirect('/new')
-
-		elif button == 'Cancel':
-			return redirect(url_for('home'))
-
-@app.route('/maps', methods=['GET', 'POST'])  		   
-def maps():
-	if request.method == 'GET':
-		MessageList = database.returnAllMessages()
-		return render_template('testing-map.html', MessageList = MessageList)'''
-
-
 if __name__=="__main__":
     app.debug=True
     app.config['TRAP_BAD_REQUEST_ERRORS'] = True
