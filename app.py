@@ -80,4 +80,4 @@ def home():
 if __name__=="__main__":
     app.debug=True
     app.config['TRAP_BAD_REQUEST_ERRORS'] = True
-    app.run(port=5000)
+    app.run(port=80)
